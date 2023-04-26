@@ -8,6 +8,7 @@
   --gray-2: #aaaaaa;
   --gray-3: #777777;
   --gray-4: #333333;
+  --white: #f5f5f5;
 }
 
 /* === mixin === */
@@ -18,11 +19,11 @@
 @mixin TEXT {
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--color-gray-4);
+  color: var(--gray-4);
 }
 
 @mixin TEXT_LARGE {
   font-size: 3.2rem;
   font-weight: 700;
-  color: var(--color-gray-3);
+  color: var(--gray-3);
 }

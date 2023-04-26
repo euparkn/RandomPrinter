@@ -1,0 +1,21 @@
+.text-input {
+  @include TEXT;
+  height: 42px;
+  width: 100%;
+  border: 0;
+  background-color: var(--gray-1);
+  border-radius: 21px;
+  padding: 0 21px;
+  box-sizing: border-box;
+  &:not(:focus) {
+    color: var(--gray-3);
+    background-color: var(--white);
+  }
+  &:disabled {
+    color: var(--gray-4);
+    background-color: transparent;
+  }
+  &::placeholder {
+    color: var(--gray-2);
+  }
+}

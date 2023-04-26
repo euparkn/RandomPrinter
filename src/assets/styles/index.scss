@@ -2,6 +2,10 @@
 @import "_variables";
 @import "./atoms";
 
+html {
+  font-size: 10px;
+}
+
 body {
   font-family: "Noto Sans";
 }
