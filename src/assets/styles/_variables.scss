@@ -1,0 +1,28 @@
+/* === theme colorSet === */
+:root [data-theme="light"] {
+  --orange: #f39c12;
+  --blue: #5499c7;
+  --red: #e67e22;
+  --light-green: #a2ff00;
+  --gray-1: #eeeeee;
+  --gray-2: #aaaaaa;
+  --gray-3: #777777;
+  --gray-4: #333333;
+}
+
+/* === mixin === */
+@mixin BOX_SHADOW {
+  box-shadow: 0px 32px 0px 0px rgba($color: #000000, $alpha: 0.15);
+}
+
+@mixin TEXT {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-gray-4);
+}
+
+@mixin TEXT_LARGE {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--color-gray-3);
+}
