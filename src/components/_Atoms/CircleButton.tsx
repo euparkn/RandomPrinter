@@ -2,24 +2,24 @@ import { IconTypes } from "../../types/svgIconTypes";
 import SvgIcon from "./SvgIcon";
 
 interface IProps {
-  buttonType: IconTypes;
+  iconType: IconTypes;
   disabled?: boolean;
   onClick?: () => void;
 }
 
 function CircleButton({
-  buttonType,
+  iconType,
   disabled = false,
   onClick = undefined,
 }: IProps) {
   return (
     <button
-      className={`circle_button ${buttonType}`}
+      className={`circle_button ${iconType}`}
       type="button"
       disabled={disabled}
       onClick={onClick}
     >
-      <SvgIcon type={buttonType} />
+      <SvgIcon type={iconType} />
     </button>
   );
 }
