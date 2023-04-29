@@ -1,27 +1,11 @@
-import { ReactComponent as AddIcon } from "../../assets/icons/add.svg";
-import { ReactComponent as RemoveIcon } from "../../assets/icons/remove.svg";
-import { ReactComponent as CloseIcon } from "../../assets/icons/close.svg";
-
-type ButtonTypes = "add" | "remove" | "close";
+import { IconTypes } from "../../types/svgIconTypes";
+import SvgIcon from "./SvgIcon";
 
 interface IProps {
-  buttonType: ButtonTypes;
+  buttonType: IconTypes;
   disabled?: boolean;
   onClick?: () => void;
 }
-
-const buttonIcon = (type: ButtonTypes) => {
-  switch (type) {
-    case "add":
-      return <AddIcon />;
-    case "remove":
-      return <RemoveIcon />;
-    case "close":
-      return <CloseIcon />;
-    default:
-      return undefined;
-  }
-};
 
 function CircleButton({
   buttonType,
@@ -35,7 +19,7 @@ function CircleButton({
       disabled={disabled}
       onClick={onClick}
     >
-      {buttonIcon(buttonType)}
+      <SvgIcon type={buttonType} />
     </button>
   );
 }

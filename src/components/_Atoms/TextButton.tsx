@@ -1,24 +1,11 @@
-import { ReactComponent as SkipIcon } from "../../assets/icons/skip.svg";
-import { ReactComponent as AddIcon } from "../../assets/icons/add.svg";
-
-type TextIconTypes = "add" | "skip" | undefined;
+import { IconTypes } from "../../types/svgIconTypes";
+import SvgIcon from "./SvgIcon";
 
 interface IProps {
   text?: string;
-  IconType?: TextIconTypes;
+  IconType?: IconTypes;
   onClick?: () => void;
 }
-
-const buttonIcon = (type: TextIconTypes) => {
-  switch (type) {
-    case "add":
-      return <AddIcon />;
-    case "skip":
-      return <SkipIcon />;
-    default:
-      return undefined;
-  }
-};
 
 function TextButton({ text, IconType, onClick }: IProps) {
   return (
@@ -27,7 +14,7 @@ function TextButton({ text, IconType, onClick }: IProps) {
       type="button"
       onClick={onClick}
     >
-      {buttonIcon(IconType)}
+      <SvgIcon type={IconType} />
       {text}
     </button>
   );
