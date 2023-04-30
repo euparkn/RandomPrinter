@@ -1,9 +1,9 @@
-import ListItem from "../components/_Molecules/ListItem";
+import Aside from "../components/Aside";
 
 function Main() {
   return (
     <div className="main">
-      <ListItem />
+      <Aside />
     </div>
   );
 }

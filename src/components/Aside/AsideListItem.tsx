@@ -1,9 +1,9 @@
 import { useState } from "react";
 import CircleButton from "../_Atoms/CircleButton";
 import TextInput from "../_Atoms/TextInput";
-import Counter from "./Counter";
+import Counter from "../_Molecules/Counter";
 
-function ListItem() {
+function AsideListItem() {
   const [text, setText] = useState("Name");
   const [num, setNum] = useState(1);
 
@@ -16,4 +16,4 @@ function ListItem() {
   );
 }
 
-export default ListItem;
+export default AsideListItem;
