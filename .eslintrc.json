@@ -28,6 +28,7 @@
     "no-param-reassign": [
       "error",
       { "props": true, "ignorePropertyModificationsFor": ["draft"] }
-    ]
+    ],
+    "import/prefer-default-export": "off"
   }
 }
