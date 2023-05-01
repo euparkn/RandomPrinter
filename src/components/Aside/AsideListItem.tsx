@@ -1,19 +1,29 @@
-import { useState } from "react";
+import React from "react";
 import CircleButton from "../_Atoms/CircleButton";
 import TextInput from "../_Atoms/TextInput";
 import Counter from "../_Molecules/Counter";
+import { IListItemExtra } from "../../types/listItemTypes";
 
-function AsideListItem() {
-  const [text, setText] = useState("Name");
-  const [num, setNum] = useState(1);
-
+function AsideListItem({
+  id,
+  text,
+  count = 1,
+  update,
+  remove,
+}: IListItemExtra) {
   return (
-    <div className="list-item">
-      <CircleButton iconType="close" onClick={() => console.log("close")} />
-      <TextInput value={text} onChange={setText} />
-      <Counter count={num} setCount={setNum} />
+    <div className="aside-list-item">
+      <CircleButton iconType="close" onClick={() => remove({ id })} />
+      <TextInput
+        value={text}
+        onChange={(e) => update({ id, text: e, count })}
+      />
+      <Counter
+        state={count}
+        setState={(e: number) => update({ id, text, count: e })}
+      />
     </div>
   );
 }
 
-export default AsideListItem;
+export default React.memo(AsideListItem);
