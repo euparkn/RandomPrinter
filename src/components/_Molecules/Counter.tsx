@@ -1,31 +1,30 @@
-import { SetStateAction } from "react";
 import CircleButton from "../_Atoms/CircleButton";
 import Text from "../_Atoms/Text";
 
 interface IProps {
-  count: number;
-  setCount: React.Dispatch<SetStateAction<number>>;
+  state: number;
+  setState: (e: number) => void;
 }
 
-function Counter({ count, setCount }: IProps) {
+function Counter({ state, setState }: IProps) {
   const countUp = () => {
-    if (count >= 10) {
+    if (state >= 10) {
       return;
     }
-    setCount((prev) => prev + 1);
+    setState(state + 1);
   };
 
   const countDown = () => {
-    if (count <= 0) {
+    if (state <= 0) {
       return;
     }
-    setCount((prev) => prev - 1);
+    setState(state - 1);
   };
 
   return (
     <div className="counter">
       <CircleButton iconType="remove" onClick={countDown} />
-      <Text text={count.toString()} />
+      <Text text={state.toString()} />
       <CircleButton iconType="add" onClick={countUp} />
     </div>
   );
