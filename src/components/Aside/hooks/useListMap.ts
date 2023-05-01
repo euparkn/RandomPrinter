@@ -1,25 +1,39 @@
+import { useCallback } from "react";
+import { useRecoilState } from "recoil";
 import { produce } from "immer";
-import { useState } from "react";
 import { IListItem } from "../../../types/listItemTypes";
+import { listStateAtom } from "../../../store";
 
-const useListMap = () => {
-  const [listMap, setListMap] = useState(new Map());
+const useListState = () => {
+  const [listState, setListState] = useRecoilState(listStateAtom);
 
-  const removeMapItem = ({ id }: IListItem) => {
-    const removedMap = produce(listMap, (draft) => {
-      draft.delete(id);
+  const arrayFromMap = useCallback((map: Map<number, IListItem>) => {
+    const array: IListItem[] = [];
+    map.forEach((val: IListItem, key: number) => {
+      array.push({ id: key, text: val.text, count: val.count });
     });
-    setListMap(removedMap);
-  };
+    return array;
+  }, []);
 
-  const updateMapItem = ({ id, text, count }: IListItem) => {
-    const addedMap = produce(listMap, (draft) => {
-      draft.set(id, { text, count });
+  const remove = useCallback(({ id }: IListItem) => {
+    setListState((prev) => {
+      const removedMap = produce(prev, (draft) => {
+        draft.delete(id);
+      });
+      return removedMap;
     });
-    setListMap(addedMap);
-  };
+  }, []);
 
-  return { listMap, updateMapItem, removeMapItem };
+  const update = useCallback(({ id, text, count }: IListItem) => {
+    setListState((prev) => {
+      const addedMap = produce(prev, (draft) => {
+        draft.set(id, { text, count });
+      });
+      return addedMap;
+    });
+  }, []);
+
+  return { listState, arrayFromMap, update, remove };
 };
 
-export default useListMap;
+export default useListState;
