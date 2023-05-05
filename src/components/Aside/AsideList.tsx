@@ -1,30 +1,35 @@
 import React from "react";
 import { enableMapSet } from "immer";
-import useListMap from "./hooks/useListMap";
+
+import useAsideList from "./hooks/useAsideList";
+
 import AsideListItem from "./AsideListItem";
+
 import CircleButton from "../_Atoms/CircleButton";
-import { IListItem } from "../../types/listItemTypes";
+
+import { IAsideListItem } from "../../types/listItemTypes";
 
 enableMapSet();
 
 function AsideList() {
-  const { listState, arrayFromMap, update, remove } = useListMap();
+  const { asideList, arrayFromMap, updateAsideList, removeAsideList } =
+    useAsideList();
 
   return (
     <div className="aside-list">
-      {arrayFromMap(listState)?.map((e: IListItem) => (
+      {arrayFromMap(asideList)?.map((e: IAsideListItem) => (
         <AsideListItem
           key={e.id}
           id={e.id}
           text={e.text}
           count={e.count}
-          update={update}
-          remove={remove}
+          updateAsideList={updateAsideList}
+          removeAsideList={removeAsideList}
         />
       ))}
       <CircleButton
         iconType="add"
-        onClick={() => update({ id: Date.now(), text: "", count: 1 })}
+        onClick={() => updateAsideList({ id: Date.now(), text: "", count: 1 })}
       />
     </div>
   );

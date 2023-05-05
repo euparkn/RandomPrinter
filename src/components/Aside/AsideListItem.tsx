@@ -2,25 +2,25 @@ import React from "react";
 import CircleButton from "../_Atoms/CircleButton";
 import TextInput from "../_Atoms/TextInput";
 import Counter from "../_Molecules/Counter";
-import { IListItemExtra } from "../../types/listItemTypes";
+import { IAsideListItemExtra } from "../../types/listItemTypes";
 
 function AsideListItem({
   id,
   text,
   count = 1,
-  update,
-  remove,
-}: IListItemExtra) {
+  updateAsideList,
+  removeAsideList,
+}: IAsideListItemExtra) {
   return (
     <div className="aside-list-item">
-      <CircleButton iconType="close" onClick={() => remove({ id })} />
+      <CircleButton iconType="close" onClick={() => removeAsideList({ id })} />
       <TextInput
         value={text}
-        onChange={(e) => update({ id, text: e, count })}
+        onChange={(value) => updateAsideList({ id, text: value, count })}
       />
       <Counter
         state={count}
-        setState={(e: number) => update({ id, text, count: e })}
+        setState={(value) => updateAsideList({ id, text, count: value })}
       />
     </div>
   );

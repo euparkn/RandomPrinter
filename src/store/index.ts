@@ -1,7 +1,7 @@
 import { atom } from "recoil";
 
-export const listStateAtom = atom({
-  key: "listState",
+export const asideListAtom = atom({
+  key: "asideList",
   default: new Map(),
 });
 

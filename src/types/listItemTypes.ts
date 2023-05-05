@@ -1,10 +1,10 @@
-export interface IListItem {
+export interface IAsideListItem {
   id?: number;
   text?: string;
   count?: number;
 }
 
-export interface IListItemExtra extends IListItem {
-  update: ({ id, text, count }: IListItem) => void;
-  remove: ({ id }: IListItem) => void;
+export interface IAsideListItemExtra extends IAsideListItem {
+  updateAsideList: ({ id, text, count }: IAsideListItem) => void;
+  removeAsideList: ({ id }: IAsideListItem) => void;
 }
