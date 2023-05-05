@@ -3,13 +3,19 @@ import Text from "./Text";
 interface IProps {
   label?: string;
   value?: boolean;
-  onChange?: () => void;
+  onChange: (value: boolean) => void;
 }
 function ToggleSwitch({ label, value = false, onChange }: IProps) {
   return (
     <label className="toggle_switch">
       {label && <Text text={label} />}
-      <input type="checkbox" defaultChecked={value} onChange={onChange} />
+      <input
+        type="checkbox"
+        defaultChecked={value}
+        onChange={(e) => {
+          onChange(e.target.checked);
+        }}
+      />
       <span />
     </label>
   );
