@@ -2,7 +2,7 @@ import { atom } from "recoil";
 
 export const asideListAtom = atom({
   key: "asideList",
-  default: new Map(),
+  default: [],
 });
 
 export const asideOptionAtom = atom({

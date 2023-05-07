@@ -7,18 +7,19 @@ import { asideListAtom } from "../../../store";
 const useAsideList = () => {
   const [asideList, setAsideList] = useRecoilState(asideListAtom);
 
-  const arrayFromMap = useCallback((map: Map<number, IAsideListItem>) => {
-    const array: IAsideListItem[] = [];
-    map.forEach((val: IAsideListItem, key: number) => {
-      array.push({ id: key, text: val.text, count: val.count });
+  const createAsideList = useCallback(() => {
+    setAsideList((prev) => {
+      const addedMap = produce(prev, (draft: IAsideListItem[]) => {
+        draft.push({ id: Date.now(), text: "", count: 1 });
+      });
+      return addedMap;
     });
-    return array;
   }, []);
 
-  const removeAsideList = useCallback(({ id }: IAsideListItem) => {
+  const removeAsideList = useCallback(({ id }: { id: number }) => {
     setAsideList((prev) => {
-      const removedMap = produce(prev, (draft) => {
-        draft.delete(id);
+      const removedMap = produce(prev, (draft: IAsideListItem[]) => {
+        draft.filter((e: IAsideListItem) => e.id !== id);
       });
       return removedMap;
     });
@@ -26,14 +27,16 @@ const useAsideList = () => {
 
   const updateAsideList = useCallback(({ id, text, count }: IAsideListItem) => {
     setAsideList((prev) => {
-      const addedMap = produce(prev, (draft) => {
-        draft.set(id, { text, count });
+      const updatedMap = produce(prev, (draft: IAsideListItem[]) => {
+        const test: any = draft.find((e: IAsideListItem) => e.id === id);
+        test.text = text;
+        test.count = count;
       });
-      return addedMap;
+      return updatedMap;
     });
   }, []);
 
-  return { asideList, arrayFromMap, updateAsideList, removeAsideList };
+  return { asideList, createAsideList, updateAsideList, removeAsideList };
 };
 
 export default useAsideList;

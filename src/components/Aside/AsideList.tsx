@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { enableMapSet } from "immer";
 
 import useAsideList from "./hooks/useAsideList";
@@ -12,12 +12,12 @@ import { IAsideListItem } from "../../types/listItemTypes";
 enableMapSet();
 
 function AsideList() {
-  const { asideList, arrayFromMap, updateAsideList, removeAsideList } =
+  const { asideList, createAsideList, updateAsideList, removeAsideList } =
     useAsideList();
 
   return (
     <div className="aside-list">
-      {arrayFromMap(asideList)?.map((e: IAsideListItem) => (
+      {asideList.map((e: IAsideListItem) => (
         <AsideListItem
           key={e.id}
           id={e.id}
@@ -27,10 +27,7 @@ function AsideList() {
           removeAsideList={removeAsideList}
         />
       ))}
-      <CircleButton
-        iconType="add"
-        onClick={() => updateAsideList({ id: Date.now(), text: "", count: 1 })}
-      />
+      <CircleButton iconType="add" onClick={createAsideList} />
     </div>
   );
 }
