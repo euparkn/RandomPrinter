@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { enableMapSet } from "immer";
 
 import useAsideList from "./hooks/useAsideList";
 
@@ -8,10 +7,8 @@ import CircleButton from "../_Atoms/CircleButton";
 
 import { IAsideListItem } from "../../types/listItemTypes";
 
-enableMapSet();
-
 function AsideList() {
-  const { asideList, createAsideList, updateAsideList, removeAsideList } =
+  const { asideList, createListItem, updateListItem, removeListItem } =
     useAsideList();
 
   const listRef = useRef<HTMLDivElement>(null);
@@ -32,12 +29,12 @@ function AsideList() {
           id={e.id}
           text={e.text}
           count={e.count}
-          updateAsideList={updateAsideList}
-          removeAsideList={removeAsideList}
+          updateListItem={updateListItem}
+          removeListItem={removeListItem}
         />
       ))}
       <div className="aside-list-item">
-        <CircleButton iconType="add" onClick={createAsideList} />
+        <CircleButton iconType="add" onClick={createListItem} />
       </div>
     </div>
   );

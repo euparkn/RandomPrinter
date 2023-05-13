@@ -5,6 +5,6 @@ export interface IAsideListItem {
 }
 
 export interface IAsideListItemExtra extends IAsideListItem {
-  updateAsideList: ({ id, text, count }: IAsideListItem) => void;
-  removeAsideList: ({ id }: { id: number }) => void;
+  updateListItem: ({ id, text, count }: IAsideListItem) => void;
+  removeListItem: ({ id }: { id: number }) => void;
 }

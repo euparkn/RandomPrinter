@@ -1,6 +1,7 @@
 import { atom } from "recoil";
+import { IAsideListItem } from "../types/listItemTypes";
 
-export const asideListAtom = atom({
+export const asideListAtom = atom<IAsideListItem[]>({
   key: "asideList",
   default: [],
 });

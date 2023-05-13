@@ -8,19 +8,19 @@ function AsideListItem({
   id,
   text,
   count = 1,
-  updateAsideList,
-  removeAsideList,
+  updateListItem,
+  removeListItem,
 }: IAsideListItemExtra) {
   return (
     <div className="aside-list-item">
-      <CircleButton iconType="close" onClick={() => removeAsideList({ id })} />
+      <CircleButton iconType="close" onClick={() => removeListItem({ id })} />
       <TextInput
         value={text}
-        onChange={(value) => updateAsideList({ id, text: value, count })}
+        onChange={(value) => updateListItem({ id, text: value, count })}
       />
       <Counter
         state={count}
-        setState={(value) => updateAsideList({ id, text, count: value })}
+        setState={(value) => updateListItem({ id, text, count: value })}
       />
     </div>
   );

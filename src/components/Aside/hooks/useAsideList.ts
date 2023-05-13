@@ -1,42 +1,43 @@
 import { useCallback } from "react";
 import { useRecoilState } from "recoil";
-import { produce } from "immer";
 import { IAsideListItem } from "../../../types/listItemTypes";
 import { asideListAtom } from "../../../store";
 
 const useAsideList = () => {
   const [asideList, setAsideList] = useRecoilState(asideListAtom);
 
-  const createAsideList = useCallback(() => {
+  const createListItem = useCallback(() => {
     setAsideList((prev) => {
-      const addedMap = produce(prev, (draft: IAsideListItem[]) => {
-        draft.push({ id: Date.now(), text: "", count: 1 });
-      });
+      const addedMap = structuredClone(prev);
+      addedMap.push({ id: Date.now(), text: "", count: 1 });
       return addedMap;
     });
   }, []);
 
-  const removeAsideList = useCallback(({ id }: { id: number }) => {
+  const removeListItem = useCallback(({ id }: { id: number }) => {
     setAsideList((prev) => {
-      const removedMap = produce(prev, (draft: IAsideListItem[]) => {
-        draft.filter((e: IAsideListItem) => e.id !== id);
-      });
+      const removedMap = structuredClone(prev);
+      removedMap.filter((e: IAsideListItem) => e.id !== id);
       return removedMap;
     });
   }, []);
 
-  const updateAsideList = useCallback(({ id, text, count }: IAsideListItem) => {
+  const updateListItem = useCallback(({ id, text, count }: IAsideListItem) => {
     setAsideList((prev) => {
-      const updatedMap = produce(prev, (draft: IAsideListItem[]) => {
-        const test: any = draft.find((e: IAsideListItem) => e.id === id);
-        test.text = text;
-        test.count = count;
-      });
+      const updatedMap = structuredClone(prev);
+      const item = updatedMap.find((e: IAsideListItem) => e.id === id);
+      item.text = text;
+      item.count = count;
       return updatedMap;
     });
   }, []);
 
-  return { asideList, createAsideList, updateAsideList, removeAsideList };
+  return {
+    asideList,
+    createListItem,
+    updateListItem,
+    removeListItem,
+  };
 };
 
 export default useAsideList;
