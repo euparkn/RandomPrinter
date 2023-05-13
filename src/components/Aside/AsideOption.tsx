@@ -5,7 +5,7 @@ function AsideOption() {
   const { updateAsideOption } = useAsideOption();
 
   return (
-    <>
+    <div className="aside-option">
       <ToggleSwitch
         label="Animation"
         onChange={(value) => updateAsideOption({ animation: value })}
@@ -14,7 +14,7 @@ function AsideOption() {
         label="Remove picked item"
         onChange={(value) => updateAsideOption({ removePickedItem: value })}
       />
-    </>
+    </div>
   );
 }
 

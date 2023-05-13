@@ -12,6 +12,12 @@
 }
 
 /* === mixin === */
+
+@mixin FULLSIZE {
+  width: 100%;
+  height: 100%;
+}
+
 @mixin BOX_SHADOW {
   box-shadow: 0px 32px 0px 0px rgba($color: #000000, $alpha: 0.15);
 }
@@ -26,4 +32,9 @@
   font-size: 3.2rem;
   font-weight: 700;
   color: var(--gray-3);
+}
+
+@mixin FLEX_COLUMN {
+  display: flex;
+  flex-direction: column;
 }

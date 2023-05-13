@@ -12,16 +12,17 @@ function TextInput({
   onChange,
 }: IProps) {
   return (
-    <label>
-      <input
-        className="text-input"
-        type="text"
-        placeholder={placeholder}
-        defaultValue={value}
-        disabled={disabled}
-        onChange={(e) => onChange(e.target.value)}
-      />
-    </label>
+    <fieldset className="text-input">
+      <label>
+        <input
+          type="text"
+          placeholder={placeholder}
+          defaultValue={value}
+          disabled={disabled}
+          onChange={(e) => onChange(e.target.value)}
+        />
+      </label>
+    </fieldset>
   );
 }
 

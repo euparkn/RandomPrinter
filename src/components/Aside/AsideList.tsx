@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { enableMapSet } from "immer";
 
 import useAsideList from "./hooks/useAsideList";
 
 import AsideListItem from "./AsideListItem";
-
 import CircleButton from "../_Atoms/CircleButton";
 
 import { IAsideListItem } from "../../types/listItemTypes";
@@ -27,7 +26,9 @@ function AsideList() {
           removeAsideList={removeAsideList}
         />
       ))}
-      <CircleButton iconType="add" onClick={createAsideList} />
+      <div className="aside-list-item">
+        <CircleButton iconType="add" onClick={createAsideList} />
+      </div>
     </div>
   );
 }

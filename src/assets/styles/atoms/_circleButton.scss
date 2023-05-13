@@ -1,11 +1,12 @@
 .circle_button {
-  width: 32px;
-  height: 32px;
+  min-width: 24px;
+  height: 24px;
+  padding: 4px;
   background-color: var(--gray-1);
-  border-radius: 16px;
+  border-radius: 50%;
   box-sizing: border-box;
   overflow: hidden;
-  padding: 6px;
+
   transition: 0.1s;
   &:disabled {
     opacity: 0.5;

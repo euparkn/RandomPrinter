@@ -1,10 +1,42 @@
-.aside-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  .aside-list-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+.aside,
+.aside-list,
+.aside-option {
+  box-sizing: border-box;
+}
+
+.aside {
+  max-width: 460px;
+  min-width: 280px;
+  height: 100%;
+  padding: 64px 0;
+  @include FLEX_COLUMN;
+  align-items: flex-end;
+  justify-content: space-between;
+  .aside-list {
+    width: 100%;
+    padding: 0 32px;
+    margin-bottom: 50px;
+    overflow: auto;
+    .aside-list-item {
+      width: 100%;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      &:last-child {
+        margin: 24px 0 0;
+        justify-content: center;
+        .circle_button {
+          min-width: 32px;
+          height: 32px;
+          padding: 6px;
+        }
+      }
+    }
+  }
+  .aside-option {
+    max-width: 320px;
+    width: 100%;
+    padding: 0 32px;
   }
 }

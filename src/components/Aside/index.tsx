@@ -3,7 +3,7 @@ import AsideOption from "./AsideOption";
 
 function Aside() {
   return (
-    <div>
+    <div className="aside">
       <AsideList />
       <AsideOption />
     </div>
