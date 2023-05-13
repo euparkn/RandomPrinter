@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { enableMapSet } from "immer";
 
 import useAsideList from "./hooks/useAsideList";
@@ -14,8 +14,18 @@ function AsideList() {
   const { asideList, createAsideList, updateAsideList, removeAsideList } =
     useAsideList();
 
+  const listRef = useRef<HTMLDivElement>(null);
+
+  const scroll = () => {
+    listRef.current?.scrollTo(0, listRef.current.scrollHeight);
+  };
+
+  useEffect(() => {
+    scroll();
+  }, [asideList.length]);
+
   return (
-    <div className="aside-list">
+    <div className="aside-list" ref={listRef}>
       {asideList.map((e: IAsideListItem) => (
         <AsideListItem
           key={e.id}
