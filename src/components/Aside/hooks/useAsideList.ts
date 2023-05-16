@@ -8,26 +8,26 @@ const useAsideList = () => {
 
   const createListItem = useCallback(() => {
     setAsideList((prev) => {
-      const addedMap = structuredClone(prev);
-      addedMap.push({ id: Date.now(), text: "", count: 1 });
-      return addedMap;
+      const addedList = structuredClone(prev);
+      addedList.push({ id: Date.now(), text: "", count: 1 });
+      return addedList;
     });
   }, []);
 
   const removeListItem = useCallback(({ id }: { id: number }) => {
     setAsideList((prev) => {
-      const removedMap = structuredClone(prev);
-      return removedMap.filter((e: IAsideListItem) => e.id !== id);
+      const removedList = structuredClone(prev);
+      return removedList.filter((e: IAsideListItem) => e.id !== id);
     });
   }, []);
 
   const updateListItem = useCallback(({ id, text, count }: IAsideListItem) => {
     setAsideList((prev) => {
-      const updatedMap = structuredClone(prev);
-      const item = updatedMap.find((e: IAsideListItem) => e.id === id);
+      const updatedList = structuredClone(prev);
+      const item = updatedList.find((e: IAsideListItem) => e.id === id);
       item.text = text;
       item.count = count;
-      return updatedMap;
+      return updatedList;
     });
   }, []);
 
