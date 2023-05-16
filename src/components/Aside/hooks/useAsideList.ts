@@ -17,8 +17,7 @@ const useAsideList = () => {
   const removeListItem = useCallback(({ id }: { id: number }) => {
     setAsideList((prev) => {
       const removedMap = structuredClone(prev);
-      removedMap.filter((e: IAsideListItem) => e.id !== id);
-      return removedMap;
+      return removedMap.filter((e: IAsideListItem) => e.id !== id);
     });
   }, []);
 
