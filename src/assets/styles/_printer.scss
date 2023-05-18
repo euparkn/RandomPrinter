@@ -1,0 +1,79 @@
+.printer {
+  width: 520px;
+  height: 560px;
+  position: relative;
+  > div {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .printer-box {
+    width: 370px;
+    height: 315px;
+    background-color: var(--gray-4);
+    border-radius: 16px;
+    z-index: 99;
+    top: 40px;
+  }
+  .printer-body-behind {
+    width: 520px;
+    height: 52px;
+    background-color: var(--gray-3);
+    z-index: 98;
+    top: 254px;
+    border-radius: 0 0 16px 16px;
+  }
+  .printer-body {
+    width: 520px;
+    height: 134px;
+    background-color: var(--gray-3);
+    z-index: 102;
+    top: 140px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    &::before {
+      content: "";
+      width: 520px;
+      height: 40px;
+      border-radius: 16px 16px 0 0;
+      background-color: var(--gray-2);
+      top: -40px;
+      left: 0;
+      position: absolute;
+    }
+  }
+}
+
+.print-info-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.print-counter {
+  padding: 16px 20px;
+  background-color: var(--gray-4);
+  @include TEXT;
+  color: #ffffff;
+  border-radius: 4px;
+}
+
+.print-light {
+  width: 20px;
+  height: 20px;
+  margin: 12px;
+  background-color: greenyellow;
+  border-radius: 50%;
+  box-shadow: 0 0 8px 6px rgba($color: greenyellow, $alpha: 0.5);
+}
+
+.printer-paper {
+  width: 340px;
+  height: 140px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  z-index: 100;
+  box-shadow: 0 0 32px rgba($color: #000000, $alpha: 0.15);
+}

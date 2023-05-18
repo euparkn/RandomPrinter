@@ -4,6 +4,7 @@
 @import "./molecules";
 @import "./content";
 @import "./aside";
+@import "./printer";
 
 html {
   font-size: 10px;
@@ -23,6 +24,7 @@ body,
 
 .main {
   display: flex;
+  background-color: var(--gray-1);
 }
 
 @font-face {
