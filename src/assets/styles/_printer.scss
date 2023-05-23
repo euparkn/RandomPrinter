@@ -69,11 +69,35 @@
   box-shadow: 0 0 8px 6px rgba($color: greenyellow, $alpha: 0.5);
 }
 
+@keyframes paperAnimation {
+  0% {
+    top: 0;
+  }
+  40% {
+    top: 120px;
+  }
+  60% {
+    top: 120px;
+  }
+  100% {
+    top: 400px;
+  }
+}
+
 .printer-paper {
   width: 340px;
   height: 140px;
+  line-height: 140px;
   background-color: #ffffff;
   border-radius: 16px;
   z-index: 100;
   box-shadow: 0 0 32px rgba($color: #000000, $alpha: 0.15);
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 900;
+  top: 0;
+  &.done {
+    top: 400px;
+    animation: paperAnimation 1.5s ease;
+  }
 }
