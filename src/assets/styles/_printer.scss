@@ -72,9 +72,15 @@
 @keyframes paperAnimation {
   0% {
     top: 0;
+    color: #ffffff;
+  }
+  10% {
+    top: 40px;
+    color: #ffffff;
   }
   40% {
     top: 120px;
+    color: #000000;
   }
   60% {
     top: 120px;
@@ -95,9 +101,8 @@
   text-align: center;
   font-size: 3.2rem;
   font-weight: 900;
-  top: 0;
   &.done {
     top: 400px;
-    animation: paperAnimation 1.5s ease;
+    animation: paperAnimation 2s ease;
   }
 }

@@ -21,7 +21,6 @@ function Printer() {
         </Info>
       </div>
       <div className="printer-body-behind" />
-      <PrinterPaper text="" />
       <PrinterPaper text="Sample" />
     </div>
   );
