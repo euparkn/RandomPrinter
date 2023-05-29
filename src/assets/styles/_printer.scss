@@ -95,6 +95,7 @@
   height: 140px;
   line-height: 140px;
   background-color: #ffffff;
+  color: #ffffff;
   border-radius: 16px;
   z-index: 100;
   box-shadow: 0 0 32px rgba($color: #000000, $alpha: 0.15);
@@ -103,6 +104,9 @@
   font-weight: 900;
   &.done {
     top: 400px;
-    animation: paperAnimation 2s ease;
+    color: #000000;
+    &.animation {
+      animation: paperAnimation 2s ease;
+    }
   }
 }
