@@ -65,7 +65,7 @@ function Printer() {
     <div className="printer">
       <div className="printer-box" />
       <div className="printer-body">
-        <TextButton text="Print" onClick={print} />
+        <TextButton text="Print" onClick={print} disabled={count === max} />
         <Info>
           <Info.Counter count={count} max={max} />
           <Info.Light />
