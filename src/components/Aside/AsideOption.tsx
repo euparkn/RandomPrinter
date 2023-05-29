@@ -1,5 +1,5 @@
+import { useAsideOption } from "../../hooks/useOption";
 import ToggleSwitch from "../_Atoms/ToggleSwitch";
-import { useAsideOption } from "./hooks/useOption";
 
 function AsideOption() {
   const { updateAsideOption } = useAsideOption();

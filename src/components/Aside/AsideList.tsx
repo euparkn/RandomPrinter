@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-import useAsideList from "./hooks/useAsideList";
+import useAsideList from "../../hooks/useAsideList";
 
 import AsideListItem from "./AsideListItem";
 import CircleButton from "../_Atoms/CircleButton";

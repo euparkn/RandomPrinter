@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useRecoilState } from "recoil";
-import { IAsideListItem } from "../../../types/listItemTypes";
-import { asideListAtom } from "../../../store";
+import { IAsideListItem } from "../types/listItemTypes";
+import { asideListAtom } from "../store";
 
 const useAsideList = () => {
   const [asideList, setAsideList] = useRecoilState(asideListAtom);
