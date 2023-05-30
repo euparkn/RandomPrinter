@@ -2,7 +2,7 @@ import { shuffle, formatList } from "../utils/printerUtils";
 
 describe("test shuffle", () => {
   const texts = ["1", "2", "3"];
-  const unknowns = [undefined, null, false, [], {}];
+  const unknowns: string[] = [];
 
   test("test texts shuffle", () => {
     expect(shuffle(texts)).toHaveLength(texts.length);

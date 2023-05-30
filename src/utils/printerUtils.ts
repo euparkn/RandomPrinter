@@ -1,6 +1,6 @@
 import { IAsideListItem } from "../types/listItemTypes";
 
-export const shuffle = (list: unknown[]) => {
+export const shuffle = (list: string[]) => {
   const arr = [...list];
   for (let i = list.length - 1; i > 0; i -= 1) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -19,5 +19,5 @@ export const formatList = (list: IAsideListItem[]) => {
   return arr;
 };
 
-export const setPrinterList = (list: IAsideListItem[]) =>
+export const setFormatList = (list: IAsideListItem[]) =>
   shuffle(formatList(list));
