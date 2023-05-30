@@ -10,3 +10,8 @@ export const asideOptionAtom = atom({
   key: "asideOption",
   default: { animation: true, removePickedItem: true },
 });
+
+export const printerListAtom = atom<string[]>({
+  key: "printerList",
+  default: [],
+});

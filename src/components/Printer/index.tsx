@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { useRecoilValue } from "recoil";
 
 import TextButton from "../_Atoms/TextButton";
 import PrinterCounter from "./PrinterCounter";
 import PrinterInfoBox from "./PrinterInfoBox";
 import PrinterLight from "./PrinterLight";
 import PrinterPaper from "./PrinterPaper";
+import { printerListAtom } from "../../store";
 
 const Info = Object.assign(PrinterInfoBox, {
   Counter: PrinterCounter,
@@ -12,12 +14,12 @@ const Info = Object.assign(PrinterInfoBox, {
 });
 
 function Printer() {
+  const printerList = useRecoilValue(printerListAtom);
+
   const [count, setCount] = useState(0);
   const [status, setStatus] = useState<boolean | undefined>();
 
-  const useList = [""];
-
-  const max = useList.length - 1;
+  const max = printerList.length;
 
   useEffect(() => {
     if (status === false) {
@@ -41,9 +43,9 @@ function Printer() {
         </Info>
       </div>
       <div className="printer-body-behind" />
-      {count !== max && <PrinterPaper text={useList[count]} />}
-      {count >= 1 && <PrinterPaper text={useList[count - 1]} status />}
-      <PrinterPaper text={useList[count]} status={status} />
+      {count !== max && <PrinterPaper text={printerList[count]} />}
+      {count >= 1 && <PrinterPaper text={printerList[count - 2]} status />}
+      <PrinterPaper text={printerList[count - 1]} status={status} />
     </div>
   );
 }
