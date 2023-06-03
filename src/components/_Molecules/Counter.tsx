@@ -1,6 +1,9 @@
 import CircleButton from "../_Atoms/CircleButton";
 import Text from "../_Atoms/Text";
 
+import { ReactComponent as AddIcon } from "../../assets/icons/add.svg";
+import { ReactComponent as RemoveIcon } from "../../assets/icons/remove.svg";
+
 interface IProps {
   state: number;
   setState: (e: number) => void;
@@ -23,9 +26,13 @@ function Counter({ state, setState }: IProps) {
 
   return (
     <div className="counter">
-      <CircleButton iconType="remove" onClick={countDown} />
+      <CircleButton onClick={countDown}>
+        <AddIcon />
+      </CircleButton>
       <Text text={state.toString()} />
-      <CircleButton iconType="add" onClick={countUp} />
+      <CircleButton onClick={countUp}>
+        <RemoveIcon />
+      </CircleButton>
     </div>
   );
 }

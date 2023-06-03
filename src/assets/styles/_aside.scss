@@ -5,8 +5,8 @@
 }
 
 .aside {
-  max-width: 460px;
-  min-width: 280px;
+  max-width: 500px;
+  min-width: 400px;
   width: 100%;
   height: 100%;
   padding: 64px 0;
@@ -15,26 +15,47 @@
   justify-content: space-between;
   .aside-list {
     width: 100%;
-    padding: 0 32px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: flex-end;
+    padding: 0 64px;
     margin-bottom: 50px;
-    overflow: auto;
-    .aside-list-item {
-      width: 100%;
-      margin-bottom: 8px;
+    gap: 32px;
+    .aside-list-header {
       display: flex;
-      align-items: center;
-      gap: 12px;
-      &:last-child {
-        margin: 24px 0 0;
-        justify-content: center;
-        .circle_button {
-          min-width: 32px;
-          height: 32px;
-          padding: 6px;
+      gap: 16px;
+      .text-button {
+        &:last-child {
+          background-color: var(--orange);
+        }
+      }
+    }
+
+    .aside-list-content {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      .aside-list-item {
+        width: 100%;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        &:last-child {
+          margin: 24px 0 0;
+          justify-content: center;
+          .circle_button {
+            min-width: 32px;
+            height: 32px;
+            padding: 6px;
+          }
         }
       }
     }
   }
+
   .aside-option {
     max-width: 320px;
     width: 100%;

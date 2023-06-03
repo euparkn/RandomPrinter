@@ -4,6 +4,8 @@ import TextInput from "../_Atoms/TextInput";
 import Counter from "../_Molecules/Counter";
 import { IAsideListItemExtra } from "../../types/listItemTypes";
 
+import { ReactComponent as CloseIcon } from "../../assets/icons/close.svg";
+
 function AsideListItem({
   id,
   text,
@@ -13,7 +15,9 @@ function AsideListItem({
 }: IAsideListItemExtra) {
   return (
     <div className="aside-list-item">
-      <CircleButton iconType="close" onClick={() => removeListItem({ id })} />
+      <CircleButton onClick={() => removeListItem({ id })}>
+        <CloseIcon />
+      </CircleButton>
       <TextInput
         value={text}
         onChange={(value) => updateListItem({ id, text: value, count })}

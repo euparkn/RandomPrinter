@@ -1,22 +1,21 @@
-import { IconTypes } from "../../types/svgIconTypes";
-import SvgIcon from "./SvgIcon";
+import { ReactNode } from "react";
 
 interface IProps {
   text?: string;
-  IconType?: IconTypes;
   onClick?: () => void;
   disabled?: boolean;
+  children?: ReactNode;
 }
 
-function TextButton({ text, IconType, onClick, disabled }: IProps) {
+function TextButton({ text, onClick, disabled, children }: IProps) {
   return (
     <button
-      className={`text-button ${IconType}`}
+      className="text-button"
       type="button"
       onClick={onClick}
       disabled={disabled}
     >
-      <SvgIcon type={IconType} />
+      {children}
       {text}
     </button>
   );

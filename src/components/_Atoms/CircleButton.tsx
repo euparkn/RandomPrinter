@@ -1,25 +1,26 @@
-import { IconTypes } from "../../types/svgIconTypes";
-import SvgIcon from "./SvgIcon";
+import { ReactNode } from "react";
+
+import { ReactComponent as AddIcon } from "../../assets/icons/add.svg";
 
 interface IProps {
-  iconType: IconTypes;
   disabled?: boolean;
   onClick?: () => void;
+  children: ReactNode;
 }
 
 function CircleButton({
-  iconType,
   disabled = false,
   onClick = undefined,
+  children = <AddIcon />,
 }: IProps) {
   return (
     <button
-      className={`circle_button ${iconType}`}
+      className="circle_button"
       type="button"
       disabled={disabled}
       onClick={onClick}
     >
-      <SvgIcon type={iconType} />
+      {children}
     </button>
   );
 }

@@ -12,6 +12,8 @@ import { printerListAtom } from "../../store";
 import { setFormatList } from "../../utils/printerUtils";
 import TextButton from "../_Atoms/TextButton";
 
+import { ReactComponent as AddIcon } from "../../assets/icons/add.svg";
+
 function AsideList() {
   const { asideList, createListItem, updateListItem, removeListItem } =
     useAsideList();
@@ -49,7 +51,9 @@ function AsideList() {
           />
         ))}
         <div className="aside-list-item">
-          <CircleButton iconType="add" onClick={createListItem} />
+          <CircleButton onClick={createListItem}>
+            <AddIcon />
+          </CircleButton>
         </div>
       </div>
     </div>
