@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRecoilValue } from "recoil";
 
 import TextButton from "../_Atoms/TextButton";
@@ -16,34 +16,13 @@ const Info = Object.assign(PrinterInfoBox, {
 
 function Printer() {
   const printerList = useRecoilValue(printerListAtom);
-
-  const [count, setCount] = useState(0);
-  const [PaperStatus, setPaperStatus] = useState<boolean | undefined>();
-
-  const { isPrinting, printLoader } = usePrinter();
-
   const max = printerList.length;
 
-  const reset = () => {
-    setCount(0);
-    setPaperStatus(undefined);
-  };
-
-  const print = () => {
-    setPaperStatus(false);
-    setCount((prev) => prev + 1);
-    printLoader();
-  };
+  const { count, PaperStatus, isPrinting, print, reset } = usePrinter();
 
   useEffect(() => {
     reset();
   }, [printerList]);
-
-  useEffect(() => {
-    if (PaperStatus === false) {
-      setPaperStatus(true);
-    }
-  }, [PaperStatus]);
 
   return (
     <div className="printer">
