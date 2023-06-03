@@ -21,16 +21,25 @@ function Printer() {
 
   const max = printerList.length;
 
-  useEffect(() => {
-    if (status === false) {
-      setStatus(true);
-    }
-  }, [status]);
+  const reset = () => {
+    setCount(0);
+    setStatus(undefined);
+  };
 
   const print = () => {
     setStatus(false);
     setCount((prev) => prev + 1);
   };
+
+  useEffect(() => {
+    reset();
+  }, [printerList]);
+
+  useEffect(() => {
+    if (status === false) {
+      setStatus(true);
+    }
+  }, [status]);
 
   return (
     <div className="printer">
@@ -45,7 +54,9 @@ function Printer() {
       <div className="printer-body-behind" />
       {count !== max && <PrinterPaper text={printerList[count]} />}
       {count >= 1 && <PrinterPaper text={printerList[count - 2]} status />}
-      <PrinterPaper text={printerList[count - 1]} status={status} />
+      {max !== 0 && (
+        <PrinterPaper text={printerList[count - 1]} status={status} />
+      )}
     </div>
   );
 }

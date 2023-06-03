@@ -29,24 +29,29 @@ function AsideList() {
   }, [asideList.length]);
 
   return (
-    <div className="aside-list" ref={listRef}>
-      {asideList.map((e: IAsideListItem) => (
-        <AsideListItem
-          key={e.id}
-          id={e.id}
-          text={e.text}
-          count={e.count}
-          updateListItem={updateListItem}
-          removeListItem={removeListItem}
+    <div className="aside-list">
+      <div className="aside-list-header">
+        <TextButton
+          text="Set Printer"
+          onClick={() => setPrinterList(setFormatList(asideList))}
         />
-      ))}
-      <div className="aside-list-item">
-        <CircleButton iconType="add" onClick={createListItem} />
       </div>
-      <TextButton
-        text="Save"
-        onClick={() => setPrinterList(setFormatList(asideList))}
-      />
+
+      <div className="aside-list-content" ref={listRef}>
+        {asideList.map((e: IAsideListItem) => (
+          <AsideListItem
+            key={e.id}
+            id={e.id}
+            text={e.text}
+            count={e.count}
+            updateListItem={updateListItem}
+            removeListItem={removeListItem}
+          />
+        ))}
+        <div className="aside-list-item">
+          <CircleButton iconType="add" onClick={createListItem} />
+        </div>
+      </div>
     </div>
   );
 }
