@@ -69,6 +69,10 @@
   background-color: greenyellow;
   border-radius: 50%;
   box-shadow: 0 0 8px 6px rgba($color: greenyellow, $alpha: 0.5);
+  &.wait {
+    background-color: orange;
+    box-shadow: 0 0 8px 6px rgba($color: orange, $alpha: 0.5);
+  }
 }
 
 @keyframes paperAnimation {

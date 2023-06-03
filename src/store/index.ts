@@ -15,3 +15,8 @@ export const printerListAtom = atom<string[]>({
   key: "printerList",
   default: [],
 });
+
+export const isPrintingAtom = atom<boolean>({
+  key: "isPrinting",
+  default: false,
+});
