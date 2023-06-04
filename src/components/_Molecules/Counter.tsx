@@ -27,11 +27,11 @@ function Counter({ state, setState }: IProps) {
   return (
     <div className="counter">
       <CircleButton onClick={countDown} backgroundColor="#ddd">
-        <RemoveIcon fill="#777" />
+        <RemoveIcon fill="#333" />
       </CircleButton>
       <Text text={state.toString()} />
       <CircleButton onClick={countUp} backgroundColor="#ddd">
-        <AddIcon fill="#777" />
+        <AddIcon fill="#333" />
       </CircleButton>
     </div>
   );

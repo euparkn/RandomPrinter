@@ -36,7 +36,8 @@ function AsideList() {
         <TextButton
           text="Set Printer"
           onClick={() => setPrinterList(setFormatList(asideList))}
-          color="#f39c12"
+          backgroundColor="#5499c7"
+          color="#fff"
         />
       </div>
 
