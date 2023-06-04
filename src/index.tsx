@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RecoilRoot } from "recoil";
 import reportWebVitals from "./reportWebVitals";
-import App from "./pages/app/App";
+import App from "./pages/App";
 import "./assets/styles/index.scss";
 
 const root = ReactDOM.createRoot(
