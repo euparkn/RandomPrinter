@@ -5,15 +5,25 @@ interface IProps {
   onClick?: () => void;
   disabled?: boolean;
   children?: ReactNode;
+  backgroundColor?: string;
+  color?: string;
 }
 
-function TextButton({ text, onClick, disabled, children }: IProps) {
+function TextButton({
+  text,
+  onClick,
+  disabled,
+  children,
+  backgroundColor = "#fff",
+  color = "#333",
+}: IProps) {
   return (
     <button
       className="text-button"
       type="button"
       onClick={onClick}
       disabled={disabled}
+      style={{ backgroundColor, color }}
     >
       {children}
       {text}

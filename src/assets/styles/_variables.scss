@@ -3,12 +3,24 @@
   --orange: #f39c12;
   --blue: #5499c7;
   --red: #e67e22;
-  --light-green: #a2ff00;
   --gray-1: #eeeeee;
   --gray-2: #aaaaaa;
   --gray-3: #777777;
   --gray-4: #333333;
-  --white: #f5f5f5;
+  --color-1: #f5f5f5;
+  --color-2: #333333;
+}
+
+:root [data-theme="dark"] {
+  --orange: #f39c12;
+  --blue: #5499c7;
+  --red: #e67e22;
+  --gray-1: #333333;
+  --gray-2: #777777;
+  --gray-3: #aaaaaa;
+  --gray-4: #eeeeee;
+  --color-1: #333333;
+  --color-2: #f5f5f5;
 }
 
 /* === mixin === */
@@ -16,10 +28,6 @@
 @mixin FULLSIZE {
   width: 100%;
   height: 100%;
-}
-
-@mixin BOX_SHADOW {
-  box-shadow: 0px 32px 0px 0px rgba($color: #000000, $alpha: 0.15);
 }
 
 @mixin TEXT {

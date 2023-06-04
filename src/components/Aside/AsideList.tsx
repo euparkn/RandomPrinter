@@ -36,6 +36,7 @@ function AsideList() {
         <TextButton
           text="Set Printer"
           onClick={() => setPrinterList(setFormatList(asideList))}
+          color="#f39c12"
         />
       </div>
 
@@ -51,8 +52,8 @@ function AsideList() {
           />
         ))}
         <div className="aside-list-item">
-          <CircleButton onClick={createListItem}>
-            <AddIcon />
+          <CircleButton onClick={createListItem} backgroundColor="#5499c7">
+            <AddIcon fill="#fff" />
           </CircleButton>
         </div>
       </div>

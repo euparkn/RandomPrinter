@@ -26,11 +26,6 @@
     .aside-list-header {
       display: flex;
       gap: 16px;
-      .text-button {
-        &:last-child {
-          background-color: var(--orange);
-        }
-      }
     }
 
     .aside-list-content {

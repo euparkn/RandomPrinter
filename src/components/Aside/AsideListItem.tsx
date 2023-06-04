@@ -15,8 +15,11 @@ function AsideListItem({
 }: IAsideListItemExtra) {
   return (
     <div className="aside-list-item">
-      <CircleButton onClick={() => removeListItem({ id })}>
-        <CloseIcon />
+      <CircleButton
+        onClick={() => removeListItem({ id })}
+        backgroundColor="#e67e22"
+      >
+        <CloseIcon fill="#fff" />
       </CircleButton>
       <TextInput
         value={text}
