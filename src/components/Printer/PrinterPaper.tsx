@@ -1,13 +1,18 @@
-import { useRecoilValue } from "recoil";
-import { asideOptionAtom } from "../../store";
+import React from "react";
 
-function PrinterPaper({ text, status }: { text?: string; status?: boolean }) {
-  const asideOption = useRecoilValue(asideOptionAtom);
-
+function PrinterPaper({
+  text,
+  status,
+  animation,
+}: {
+  text?: string;
+  status?: boolean;
+  animation?: boolean;
+}) {
   return (
     <div
       className={`printer-paper ${status ? "done" : ""} ${
-        asideOption.animation ? "animation" : ""
+        animation ? "animation" : ""
       }`}
     >
       {text}
@@ -15,4 +20,4 @@ function PrinterPaper({ text, status }: { text?: string; status?: boolean }) {
   );
 }
 
-export default PrinterPaper;
+export default React.memo(PrinterPaper);
