@@ -9,5 +9,5 @@ export const useAsideOption = () => {
     setAsideOption({ ...asideOption, ...value });
   };
 
-  return { updateAsideOption };
+  return { asideOption, updateAsideOption };
 };

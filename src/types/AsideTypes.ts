@@ -1,4 +1,4 @@
 export interface IAsideOption {
   animation?: boolean;
-  removePickedItem?: boolean;
+  darkMode?: boolean;
 }

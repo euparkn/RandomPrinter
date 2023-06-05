@@ -2,17 +2,19 @@ import { useAsideOption } from "../../hooks/useOption";
 import ToggleSwitch from "../_Atoms/ToggleSwitch";
 
 function AsideOption() {
-  const { updateAsideOption } = useAsideOption();
+  const { asideOption, updateAsideOption } = useAsideOption();
 
   return (
     <div className="aside-option">
       <ToggleSwitch
         label="Animation"
+        value={asideOption.animation}
         onChange={(value) => updateAsideOption({ animation: value })}
       />
       <ToggleSwitch
-        label="Remove picked item"
-        onChange={(value) => updateAsideOption({ removePickedItem: value })}
+        label="Dark Mode"
+        value={asideOption.darkMode}
+        onChange={(value) => updateAsideOption({ darkMode: value })}
       />
     </div>
   );

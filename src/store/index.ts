@@ -24,7 +24,7 @@ export const asideListAtom = atom<IAsideListItem[]>({
 
 export const asideOptionAtom = atom({
   key: "asideOption",
-  default: { animation: true, removePickedItem: true },
+  default: { animation: true, darkMode: false },
 });
 
 export const printerListAtom = atom<string[]>({
