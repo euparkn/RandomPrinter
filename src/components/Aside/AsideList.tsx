@@ -52,11 +52,11 @@ function AsideList() {
             removeListItem={removeListItem}
           />
         ))}
-        <div className="aside-list-item">
+        {asideList.length < 20 && (
           <CircleButton onClick={createListItem} backgroundColor="#5499c7">
             <AddIcon fill="#fff" />
           </CircleButton>
-        </div>
+        )}
       </div>
     </div>
   );
