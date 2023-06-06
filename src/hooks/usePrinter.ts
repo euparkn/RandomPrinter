@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
-import { asideOptionAtom, isPrintingAtom } from "../store";
+import { useRecoilValue } from "recoil";
+import { asideOptionAtom } from "../store";
 
 export const usePrinter = () => {
-  const [isPrinting, setIsPrinting] = useRecoilState(isPrintingAtom);
+  const [isPrinting, setIsPrinting] = useState(false);
   const asideOption = useRecoilValue(asideOptionAtom);
 
   const [count, setCount] = useState(0);
