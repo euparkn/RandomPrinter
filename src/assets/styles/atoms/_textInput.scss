@@ -9,17 +9,16 @@
     padding: 0 21px;
     box-sizing: border-box;
     border: 0;
-    color: var(--color-2);
-    background-color: var(--color-1);
+    color: var(--font);
+    background-color: var(--input);
     &:focus {
-      background-color: var(--gray-1);
+      background-color: var(--input-focus);
     }
     &:disabled {
-      color: var(--gray-4);
       background-color: transparent;
     }
     &::placeholder {
-      color: var(--gray-2);
+      color: var(--font-sub);
     }
   }
 }

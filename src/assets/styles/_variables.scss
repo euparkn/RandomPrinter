@@ -3,26 +3,34 @@
   --orange: #f39c12;
   --blue: #5499c7;
   --red: #e67e22;
-  --bg: #f5f5f5;
-  --gray-1: #eee;
-  --gray-2: #aaa;
-  --gray-3: #777;
-  --gray-4: #555;
-  --color-1: #fff;
-  --color-2: #333;
+  --bg: #f0f0f0;
+  --font: #444;
+  --font-sub: #aaa;
+  --input: #fff;
+  --input-focus: #fff;
+  --printer-body-1: #aaa;
+  --printer-body-2: #777;
+  --printer-body-3: #444;
+  --printer-paper: #fff;
+  --printer-paper-text: #333;
+  --content-bg: #e0e0e0;
 }
 
 :root [data-theme="dark"] {
   --orange: #f39c12;
   --blue: #5499c7;
   --red: #e67e22;
-  --bg: #2a2a2a;
-  --gray-1: #555;
-  --gray-2: #777;
-  --gray-3: #aaa;
-  --gray-4: #eee;
-  --color-1: #333;
-  --color-2: #fff;
+  --bg: #222;
+  --font: #f8f8f8;
+  --font-sub: #777;
+  --input: #2f2f2f;
+  --input-focus: #444;
+  --printer-body-1: #888;
+  --printer-body-2: #555;
+  --printer-body-3: #444;
+  --printer-paper: #ddd;
+  --printer-paper-text: #222;
+  --content-bg: #2a2a2a;
 }
 
 /* === mixin === */
@@ -35,13 +43,13 @@
 @mixin TEXT {
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--gray-4);
+  color: var(--font);
 }
 
 @mixin TEXT_LARGE {
   font-size: 3.2rem;
   font-weight: 700;
-  color: var(--gray-3);
+  color: var(--font);
 }
 
 @mixin FLEX_COLUMN {

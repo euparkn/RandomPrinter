@@ -1,7 +1,15 @@
 .content {
   @include FULLSIZE;
   min-width: 280px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 64px 0 64px 64px;
+  box-sizing: border-box;
+  .content-section {
+    @include FULLSIZE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--content-bg);
+    border-radius: 32px;
+    overflow: hidden;
+  }
 }

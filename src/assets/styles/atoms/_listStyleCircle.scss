@@ -6,21 +6,17 @@
   line-height: 32px;
   border-radius: 16px;
   text-align: center;
-  color: var(--gray-4);
   padding-top: 1px;
   box-sizing: border-box;
   &.num-1,
   &.num-2,
   &.num-3 {
-    color: var(--color-1);
+    color: var(--font);
   }
   &.num-1 {
     background-color: var(--orange);
   }
   &.num-2 {
     background-color: var(--blue);
-  }
-  &.num-3 {
-    background-color: var(--gray-3);
   }
 }

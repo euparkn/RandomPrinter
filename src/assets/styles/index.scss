@@ -22,9 +22,18 @@ body,
   @include FULLSIZE;
 }
 
-.main {
+.App {
   display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--bg);
+}
+
+.main {
+  max-width: 1920px;
+  max-height: 1080px;
+  display: flex;
+  overflow: auto;
 }
 
 @font-face {

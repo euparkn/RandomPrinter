@@ -3,7 +3,9 @@ import Printer from "../Printer";
 function Content() {
   return (
     <div className="content">
-      <Printer />
+      <div className="content-section">
+        <Printer />
+      </div>
     </div>
   );
 }
