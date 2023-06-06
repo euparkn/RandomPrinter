@@ -9,7 +9,7 @@
   min-width: 400px;
   width: 100%;
   height: 100%;
-  padding: 64px 0;
+  padding: 64px;
   @include FLEX_COLUMN;
   align-items: flex-end;
   justify-content: space-between;
@@ -20,7 +20,6 @@
     flex-direction: column;
     overflow: hidden;
     align-items: flex-end;
-    padding: 0 64px;
     margin-bottom: 50px;
     gap: 32px;
     .aside-list-header {
@@ -34,28 +33,25 @@
       overflow: auto;
       margin-right: -64px;
       padding-right: 64px;
+      text-align: center;
+      > .circle_button {
+        margin-top: 24px;
+        min-width: 32px;
+        height: 32px;
+        padding: 6px;
+      }
       .aside-list-item {
         width: 100%;
         margin-bottom: 8px;
         display: flex;
         align-items: center;
         gap: 12px;
-        &:last-child {
-          margin: 24px 0 0;
-          justify-content: center;
-          .circle_button {
-            min-width: 32px;
-            height: 32px;
-            padding: 6px;
-          }
-        }
       }
     }
   }
 
   .aside-option {
-    max-width: 320px;
+    max-width: 240px;
     width: 100%;
-    padding: 0 32px;
   }
 }
