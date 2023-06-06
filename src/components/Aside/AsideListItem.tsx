@@ -24,6 +24,7 @@ function AsideListItem({
       <TextInput
         value={text}
         onChange={(value) => updateListItem({ id, text: value, count })}
+        maxLength={30}
       />
       <Counter
         state={count}
