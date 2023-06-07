@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 
 import { useSetRecoilState } from "recoil";
 
@@ -14,22 +14,13 @@ import TextButton from "../_Atoms/TextButton";
 
 import { ReactComponent as AddIcon } from "../../assets/icons/add.svg";
 import AsideOption from "./AsideOption";
+import { useScrollWithList } from "../../hooks/useScrollWithList";
 
 function Aside() {
   const { asideList, createListItem, updateListItem, removeListItem } =
     useAsideList();
-
   const setPrinterList = useSetRecoilState(printerListAtom);
-
-  const listRef = useRef<HTMLDivElement>(null);
-
-  const scroll = () => {
-    listRef.current?.scrollTo(0, listRef.current.scrollHeight);
-  };
-
-  useEffect(() => {
-    scroll();
-  }, [asideList.length]);
+  const listRef = useScrollWithList(asideList);
 
   return (
     <div className="aside">
