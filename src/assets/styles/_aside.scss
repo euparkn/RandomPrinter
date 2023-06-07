@@ -1,5 +1,4 @@
 .aside,
-.aside-list,
 .aside-option {
   box-sizing: border-box;
 }
@@ -13,40 +12,31 @@
   @include FLEX_COLUMN;
   align-items: flex-end;
   justify-content: space-between;
-  .aside-list {
+  gap: 24px;
+  .aside-list-header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    .circle_button {
+      min-width: 42px;
+      min-height: 42px;
+    }
+  }
+  .aside-list-content {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    align-items: flex-end;
-    margin-bottom: 50px;
-    gap: 32px;
-    .aside-list-header {
-      display: flex;
-      gap: 16px;
-    }
-
-    .aside-list-content {
+    overflow: auto;
+    margin-right: -64px;
+    padding-right: 64px;
+    text-align: center;
+    .aside-list-item {
       width: 100%;
-      height: 100%;
-      overflow: auto;
-      margin-right: -64px;
-      padding-right: 64px;
-      text-align: center;
-      > .circle_button {
-        margin-top: 24px;
-        min-width: 32px;
-        height: 32px;
-        padding: 6px;
-      }
-      .aside-list-item {
-        width: 100%;
-        margin-bottom: 8px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
   }
 
