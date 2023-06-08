@@ -1,13 +1,13 @@
 import { useRecoilValue } from "recoil";
 import Main from "./Main";
-import { asideOptionAtom } from "../store";
+import { optionsAtom } from "../store";
 
 function App() {
-  const asideOption = useRecoilValue(asideOptionAtom);
+  const options = useRecoilValue(optionsAtom);
   return (
     <div
       className="App"
-      data-theme={asideOption.darkMode ? "dark" : "light"}
+      data-theme={options.darkMode ? "dark" : "light"}
       data-testid="app"
     >
       <Main />

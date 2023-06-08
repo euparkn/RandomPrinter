@@ -14,9 +14,9 @@ import { setFormatList } from "../../utils/printerUtils";
 
 import TextButton from "../_Atoms/TextButton";
 import CircleButton from "../_Atoms/CircleButton";
+import Options from "../_Molecules/Options";
 import AsideHeader from "./AsideHeader";
 import AsideListItem from "./AsideListItem";
-import AsideOption from "./AsideOption";
 
 function Aside() {
   const setPrinterList = useSetRecoilState(printerListAtom);
@@ -52,7 +52,7 @@ function Aside() {
           />
         ))}
       </div>
-      <AsideOption />
+      <Options />
     </div>
   );
 }

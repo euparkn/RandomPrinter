@@ -21,7 +21,7 @@ function Printer() {
   const printerList = useRecoilValue(printerListAtom);
   const max = printerList.length;
 
-  const { count, PaperStatus, isPrinting, print, reset, asideOption } =
+  const { count, PaperStatus, isPrinting, print, reset, options } =
     usePrinter();
 
   useEffect(() => {
@@ -49,7 +49,7 @@ function Printer() {
         <PrinterPaper
           text={printerList[count - 1]}
           status={PaperStatus}
-          animation={asideOption.animation}
+          animation={options.animation}
         />
       )}
     </div>

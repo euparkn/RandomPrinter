@@ -22,8 +22,8 @@ export const asideListAtom = atom<IAsideListItem[]>({
   ],
 });
 
-export const asideOptionAtom = atom({
-  key: "asideOption",
+export const optionsAtom = atom({
+  key: "options",
   default: { animation: true, darkMode: false },
 });
 

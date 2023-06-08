@@ -1,5 +1,4 @@
-.aside,
-.aside-option {
+.aside {
   box-sizing: border-box;
 }
 
@@ -41,9 +40,4 @@
   display: flex;
   align-items: center;
   gap: 12px;
-}
-
-.aside-option {
-  max-width: 240px;
-  width: 100%;
 }

@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
-import { asideOptionAtom } from "../store";
+import { optionsAtom } from "../store";
 
 export const usePrinter = () => {
   const [isPrinting, setIsPrinting] = useState(false);
-  const asideOption = useRecoilValue(asideOptionAtom);
+  const options = useRecoilValue(optionsAtom);
 
   const [count, setCount] = useState(0);
   const [PaperStatus, setPaperStatus] = useState<boolean | undefined>();
 
   const printLoader = () => {
-    if (!asideOption.animation) {
+    if (!options.animation) {
       return;
     }
     setIsPrinting(true);
@@ -27,7 +27,7 @@ export const usePrinter = () => {
 
   useEffect(() => {
     printLoader();
-  }, [asideOption.animation]);
+  }, [options.animation]);
 
   const reset = () => {
     setCount(0);
@@ -40,5 +40,5 @@ export const usePrinter = () => {
     }
   }, [PaperStatus]);
 
-  return { count, PaperStatus, isPrinting, print, reset, asideOption };
+  return { count, PaperStatus, isPrinting, print, reset, options };
 };
