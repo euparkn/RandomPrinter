@@ -1,42 +1,37 @@
 import React from "react";
-
 import { useSetRecoilState } from "recoil";
 
-import useAsideList from "../../hooks/useAsideList";
-
-import AsideListItem from "./AsideListItem";
-import CircleButton from "../_Atoms/CircleButton";
+import { ReactComponent as AddIcon } from "../../assets/icons/add.svg";
 
 import { IAsideListItem } from "../../types/listItemTypes";
-import { printerListAtom } from "../../store";
-import { setFormatList } from "../../utils/printerUtils";
-import TextButton from "../_Atoms/TextButton";
 
-import { ReactComponent as AddIcon } from "../../assets/icons/add.svg";
-import AsideOption from "./AsideOption";
+import { printerListAtom } from "../../store";
+
+import useAsideList from "../../hooks/useAsideList";
 import { useScrollWithList } from "../../hooks/useScrollWithList";
 
+import { setFormatList } from "../../utils/printerUtils";
+
+import TextButton from "../_Atoms/TextButton";
+import CircleButton from "../_Atoms/CircleButton";
+import AsideHeader from "./AsideHeader";
+import AsideListItem from "./AsideListItem";
+import AsideOption from "./AsideOption";
+
 function Aside() {
+  const setPrinterList = useSetRecoilState(printerListAtom);
   const { asideList, createListItem, updateListItem, removeListItem } =
     useAsideList();
-  const setPrinterList = useSetRecoilState(printerListAtom);
+
   const listRef = useScrollWithList(asideList);
 
   return (
     <div className="aside">
-      <div className="aside-list-header">
+      <AsideHeader>
         {asideList.length < 20 && (
           <CircleButton onClick={createListItem} backgroundColor="#fff">
             <AddIcon fill="#5499c7" />
           </CircleButton>
-          // <TextButton
-          //   text="Add"
-          //   onClick={createListItem}
-          //   backgroundColor="#fff"
-          //   color="#5499c7"
-          // >
-          //   <AddIcon fill="#5499c7" />
-          // </TextButton>
         )}
         <TextButton
           text="Set Printer"
@@ -44,7 +39,7 @@ function Aside() {
           backgroundColor="#5499c7"
           color="#fff"
         />
-      </div>
+      </AsideHeader>
       <div className="aside-list-content" ref={listRef}>
         {asideList.map((e: IAsideListItem) => (
           <AsideListItem

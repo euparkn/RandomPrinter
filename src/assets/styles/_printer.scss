@@ -10,7 +10,7 @@
   .printer-box {
     width: 370px;
     height: 315px;
-    background-color: var(--printer-body-3);
+    background-color: var(--printer-body-box);
     border-radius: 16px;
     z-index: 99;
     top: 40px;
@@ -18,7 +18,7 @@
   .printer-body-behind {
     width: 520px;
     height: 52px;
-    background-color: var(--printer-body-2);
+    background-color: var(--printer-body);
     z-index: 98;
     top: 254px;
     border-radius: 0 0 16px 16px;
@@ -26,7 +26,7 @@
   .printer-body {
     width: 520px;
     height: 134px;
-    background-color: var(--printer-body-2);
+    background-color: var(--printer-body);
     z-index: 102;
     top: 140px;
     padding: 20px;
@@ -38,7 +38,7 @@
       width: 520px;
       height: 40px;
       border-radius: 16px 16px 0 0;
-      background-color: var(--printer-body-1);
+      background-color: var(--printer-body-before);
       top: -40px;
       left: 0;
       position: absolute;
