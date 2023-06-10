@@ -1,22 +1,26 @@
 .list-style-circle {
   @include TEXT;
   display: inline-block;
-  width: 32px;
-  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
   line-height: 32px;
   border-radius: 16px;
   text-align: center;
   padding-top: 1px;
   box-sizing: border-box;
+  color: var(--font);
   &.num-1,
   &.num-2,
   &.num-3 {
-    color: var(--font);
+    color: #f8f8f8;
   }
   &.num-1 {
     background-color: var(--orange);
   }
   &.num-2 {
     background-color: var(--blue);
+  }
+  &.num-3 {
+    background-color: var(--font-sub);
   }
 }
