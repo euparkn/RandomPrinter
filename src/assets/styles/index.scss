@@ -2,9 +2,10 @@
 @import "_variables";
 @import "./atoms";
 @import "./molecules";
-@import "./content";
-@import "./aside";
-@import "./printer";
+@import "_content";
+@import "_aside";
+@import "_printer";
+@import "_result";
 
 html {
   font-size: 10px;
