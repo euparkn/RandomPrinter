@@ -1,11 +1,11 @@
 import React from "react";
-import { useSetRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 
 import { ReactComponent as AddIcon } from "../../assets/icons/add.svg";
 
 import { IAsideListItem } from "../../types/listItemTypes";
 
-import { printerListAtom } from "../../store";
+import { printerListAtom, showAsideAtom } from "../../store";
 
 import useAsideList from "../../hooks/useAsideList";
 import { useScrollWithList } from "../../hooks/useScrollWithList";
@@ -19,6 +19,7 @@ import AsideHeader from "./AsideHeader";
 import AsideListItem from "./AsideListItem";
 
 function Aside() {
+  const showAside = useRecoilValue(showAsideAtom);
   const setPrinterList = useSetRecoilState(printerListAtom);
   const { asideList, createListItem, updateListItem, removeListItem } =
     useAsideList();
@@ -26,7 +27,7 @@ function Aside() {
   const listRef = useScrollWithList(asideList);
 
   return (
-    <div className="aside">
+    <div className={`aside ${showAside ? "" : "hide"}`}>
       <AsideHeader>
         {asideList.length < 20 && (
           <CircleButton onClick={createListItem} backgroundColor="#fff">

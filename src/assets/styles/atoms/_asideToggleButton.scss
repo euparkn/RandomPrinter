@@ -1,0 +1,17 @@
+.aside-toggle-btn {
+  width: 42px;
+  height: 42px;
+  display: none;
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  z-index: 202;
+  &:hover svg {
+    fill: var(--font);
+  }
+  svg {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+  }
+}

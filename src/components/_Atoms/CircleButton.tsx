@@ -17,7 +17,7 @@ function CircleButton({
 }: IProps) {
   return (
     <button
-      className="circle_button"
+      className="circle-button"
       type="button"
       disabled={disabled}
       onClick={onClick}
