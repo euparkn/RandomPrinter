@@ -1,8 +1,8 @@
 .content {
   @include FULLSIZE;
-  min-width: 280px;
-  padding: 64px 0 64px 64px;
+  padding: $gap 0 $gap $gap;
   box-sizing: border-box;
+  position: relative;
   .content-section {
     @include FULLSIZE;
     display: flex;

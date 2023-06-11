@@ -6,10 +6,7 @@
 @import "_aside";
 @import "_printer";
 @import "_result";
-
-html {
-  font-size: 10px;
-}
+@import "_responsive";
 
 body {
   font-family: "Noto Sans";
@@ -31,6 +28,7 @@ body,
 }
 
 .main {
+  position: relative;
   max-width: 1920px;
   max-height: 1080px;
   display: flex;
