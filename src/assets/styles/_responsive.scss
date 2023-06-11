@@ -1,0 +1,113 @@
+@media (max-width: 1200px) {
+  .aside {
+    padding: $gap-short;
+    max-width: 300px;
+    .aside-list-content {
+      margin-right: -$gap-short;
+      padding-right: $gap-short;
+    }
+  }
+  .content {
+    padding: $gap-short 0 $gap-short $gap-short;
+  }
+}
+
+@media (max-width: 1023px) {
+  .aside-toggle-btn {
+    display: block;
+  }
+  .aside {
+    position: absolute;
+    z-index: 200;
+    right: 0;
+    &.hide {
+      display: none;
+    }
+  }
+  .content {
+    padding: 0;
+    .content-section {
+      border-radius: 0;
+    }
+  }
+  .printer {
+    transform: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .aside {
+    max-width: 100%;
+    min-width: 0;
+  }
+  .printer {
+    transform: scale(80%);
+    .print-counter {
+      width: 100px;
+      font-size: 18px;
+    }
+    .text-button {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+  .aside-toggle-btn {
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+  }
+  .aside {
+    padding: 16px;
+    .aside-list-header {
+      > div {
+        gap: 8px;
+      }
+      .text-button {
+        height: 32px;
+      }
+    }
+    .aside-list-item {
+      .text-input {
+        height: 36px;
+        input {
+          padding: 16px;
+        }
+      }
+    }
+  }
+  .options {
+    width: 100%;
+  }
+  .printer {
+    transform: scale(55%);
+    .print-counter {
+      width: 120px;
+      height: 32px;
+      font-size: 22px;
+      line-height: 32px;
+    }
+    .print-light {
+      width: 28px;
+      height: 28px;
+    }
+    .text-button {
+      height: 54px;
+      font-size: 22px;
+    }
+    .printer-paper {
+      font-size: 36px;
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  .printer {
+    transform: scale(45%);
+  }
+}
