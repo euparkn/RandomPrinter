@@ -99,11 +99,10 @@
 }
 
 .printer-paper {
+  @include FLEX_ALIGN_CENTER;
+  justify-content: center;
   width: 340px;
   height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: var(--printer-paper);
   color: var(--printer-paper);
   border-radius: 16px;

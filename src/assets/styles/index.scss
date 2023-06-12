@@ -7,6 +7,9 @@
 @import "_printer";
 @import "_result";
 @import "_responsive";
+html {
+  min-height: 480px;
+}
 
 body {
   font-family: "Noto Sans";
@@ -21,9 +24,8 @@ body,
 }
 
 .App {
-  display: flex;
+  @include FLEX_ALIGN_CENTER;
   justify-content: center;
-  align-items: center;
   background-color: var(--bg);
 }
 

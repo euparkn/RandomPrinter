@@ -16,9 +16,8 @@
 }
 
 .aside-list-header {
+  @include FLEX_ALIGN_CENTER;
   width: 100%;
-  display: flex;
-  align-items: center;
   justify-content: flex-start;
   gap: 16px;
 }
@@ -33,10 +32,9 @@
 }
 
 .aside-list-item {
+  @include FLEX_ALIGN_CENTER;
   width: 100%;
   margin-bottom: 8px;
-  display: flex;
-  align-items: center;
   gap: 12px;
   .circle-button {
     min-width: 24px;

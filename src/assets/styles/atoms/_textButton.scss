@@ -3,8 +3,7 @@
   height: 42px;
   padding: 0 20px;
   border-radius: 50px;
-  display: flex;
-  align-items: center;
+  @include FLEX_ALIGN_CENTER;
   transition: 0.2s;
   &:disabled {
     opacity: 0.5;

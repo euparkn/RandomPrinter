@@ -1,6 +1,5 @@
 .counter {
-  display: flex;
-  align-items: center;
+  @include FLEX_ALIGN_CENTER;
   p {
     min-width: 32px;
     text-align: center;
