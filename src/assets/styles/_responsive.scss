@@ -50,40 +50,13 @@
       font-size: 18px;
     }
   }
+  .content-section > .text-button {
+    bottom: 24px;
+    left: 16px;
+  }
 }
 
-@media (max-width: 480px) {
-  html {
-    font-size: 14px;
-  }
-  .aside-toggle-btn {
-    top: 16px;
-    right: 16px;
-    width: 32px;
-    height: 32px;
-  }
-  .aside {
-    padding: 16px;
-    .aside-list-header {
-      > div {
-        gap: 8px;
-      }
-      .text-button {
-        height: 32px;
-      }
-    }
-    .aside-list-item {
-      .text-input {
-        height: 36px;
-        input {
-          padding: 16px;
-        }
-      }
-    }
-  }
-  .options {
-    width: 100%;
-  }
+@media (max-width: 480px), (max-height: 767px) {
   .printer {
     transform: scale(55%);
     .print-counter {
@@ -102,6 +75,58 @@
     }
     .printer-paper {
       font-size: 36px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+  .aside-toggle-btn {
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .aside {
+    padding: 16px;
+    .aside-list-header {
+      > div {
+        gap: 8px;
+      }
+      .text-button {
+        height: 32px;
+      }
+    }
+    .aside-list-content {
+      margin-right: -$gap-mobile;
+      padding-right: $gap-mobile;
+    }
+    .aside-list-item {
+      .text-input {
+        height: 36px;
+        input {
+          padding: 16px;
+        }
+      }
+    }
+  }
+  .options {
+    width: 100%;
+  }
+  .result-list {
+    padding: 16px;
+    border-radius: 16px;
+  }
+  .list-item {
+    border: none;
+    min-height: 36px;
+    .list-style-circle {
+      min-width: 24px;
+      min-height: 24px;
+      line-height: 24px;
     }
   }
 }

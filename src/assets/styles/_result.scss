@@ -1,7 +1,30 @@
 .result {
   @include FULLSIZE;
-  .result-list {
-    max-width: 600px;
-    min-width: 200px;
+  @include FLEX_ALIGN_CENTER;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+  box-sizing: border-box;
+  h1 {
+    @include TEXT;
+    font-size: 1.8rem;
   }
+}
+
+.result-list {
+  max-width: 600px;
+  max-height: 60%;
+  overflow: auto;
+  width: 100%;
+  margin: 32px;
+  background-color: var(--content-bg);
+  border-radius: 32px;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.result-btn {
+  display: flex;
+  gap: 16px;
 }

@@ -2,14 +2,21 @@
   @include FULLSIZE;
   padding: $gap 0 $gap $gap;
   box-sizing: border-box;
-  position: relative;
   .content-section {
+    position: relative;
     @include FULLSIZE;
-    display: flex;
+    @include FLEX_ALIGN_CENTER;
     justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    gap: 64px;
     background-color: var(--content-bg);
     border-radius: 32px;
     overflow: hidden;
   }
+}
+
+.content-section > .text-button {
+  position: absolute;
+  bottom: 64px;
+  left: 64px;
 }

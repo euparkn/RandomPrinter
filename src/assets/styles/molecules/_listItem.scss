@@ -1,8 +1,7 @@
 .list-item {
+  @include FLEX_ALIGN_CENTER;
   width: 100%;
   min-height: 48px;
-  display: flex;
-  align-items: center;
   color: var(--font);
   overflow: hidden;
   border-bottom: 1px solid var(--font-sub);
