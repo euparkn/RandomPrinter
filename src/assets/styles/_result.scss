@@ -1,4 +1,6 @@
 .result {
+  position: absolute;
+  z-index: 300;
   @include FULLSIZE;
   @include FLEX_ALIGN_CENTER;
   text-align: center;
@@ -6,6 +8,7 @@
   flex-direction: column;
   padding: 16px;
   box-sizing: border-box;
+  background-color: var(--content-bg);
   h1 {
     @include TEXT;
     font-size: 1.8rem;
