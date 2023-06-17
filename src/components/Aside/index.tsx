@@ -1,6 +1,8 @@
 import React, { useMemo } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 
+import { ReactComponent as PrintAddIcon } from "../../assets/icons/print_add.svg";
+
 import { ReactComponent as AddIcon } from "../../assets/icons/add.svg";
 
 import { IAsideListItem } from "../../types/listItemTypes";
@@ -39,8 +41,15 @@ function Aside() {
     <div className={`aside ${showAside ? "" : "hide"}`}>
       <AsideHeader>
         {asideList.length < 20 && addButton}
+        {/* <CircleButton
+          onClick={() => setPrinterList(setFormatList(asideList))}
+          backgroundColor="#5499c7"
+        >
+          <PrintAddIcon fill="#fff" />
+        </CircleButton> */}
         <TextButton
-          text="Set Printer"
+          icon={<PrintAddIcon fill="#fff" />}
+          text="Save"
           onClick={() => setPrinterList(setFormatList(asideList))}
           backgroundColor="#5499c7"
           color="#fff"

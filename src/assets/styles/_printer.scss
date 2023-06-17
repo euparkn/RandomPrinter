@@ -33,6 +33,13 @@
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
+    .circle-button {
+      width: 42px;
+      height: 42px;
+      svg {
+        transform: scale(80%);
+      }
+    }
     &::before {
       content: "";
       width: 520px;
