@@ -1,3 +1,5 @@
+import React from "react";
+
 function PrinterBlock({
   position,
   children,
@@ -8,4 +10,4 @@ function PrinterBlock({
   return <div className={`printer-${position}`}>{children}</div>;
 }
 
-export default PrinterBlock;
+export default React.memo(PrinterBlock);

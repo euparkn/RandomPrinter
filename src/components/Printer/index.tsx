@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useRecoilValue } from "recoil";
 
-import { printerListAtom } from "../../store";
+import { optionsAtom, printerListAtom } from "../../store";
 
 import { usePrinter } from "../../hooks/usePrinter";
 
@@ -18,11 +18,13 @@ const Info = Object.assign(PrinterInfoBox, {
 });
 
 function Printer() {
+  const options = useRecoilValue(optionsAtom);
   const printerList = useRecoilValue(printerListAtom);
   const max = printerList.length;
 
-  const { count, PaperStatus, isPrinting, print, reset, options } =
-    usePrinter();
+  const { count, PaperStatus, isPrinting, print, reset } = usePrinter(
+    options.animation
+  );
 
   useEffect(() => {
     reset();
