@@ -1,3 +1,4 @@
+import React from "react";
 import { useOptions } from "../../hooks/useOptions";
 
 import ToggleSwitch from "../_Atoms/ToggleSwitch";
@@ -21,4 +22,4 @@ function Options() {
   );
 }
 
-export default Options;
+export default React.memo(Options);

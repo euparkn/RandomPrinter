@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 
 import { ReactComponent as AddIcon } from "../../assets/icons/add.svg";
@@ -26,14 +26,19 @@ function Aside() {
 
   const listRef = useScrollWithList(asideList);
 
+  const addButton = useMemo(
+    () => (
+      <CircleButton onClick={createListItem} backgroundColor="#fff">
+        <AddIcon fill="#5499c7" />
+      </CircleButton>
+    ),
+    [createListItem]
+  );
+
   return (
     <div className={`aside ${showAside ? "" : "hide"}`}>
       <AsideHeader>
-        {asideList.length < 20 && (
-          <CircleButton onClick={createListItem} backgroundColor="#fff">
-            <AddIcon fill="#5499c7" />
-          </CircleButton>
-        )}
+        {asideList.length < 20 && addButton}
         <TextButton
           text="Set Printer"
           onClick={() => setPrinterList(setFormatList(asideList))}

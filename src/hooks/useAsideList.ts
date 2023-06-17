@@ -25,8 +25,10 @@ const useAsideList = () => {
     setAsideList((prev) => {
       const updatedList = structuredClone(prev);
       const item = updatedList.find((e: IAsideListItem) => e.id === id);
-      item.text = text;
-      item.count = count;
+      if (item) {
+        item.text = text;
+        item.count = count;
+      }
       return updatedList;
     });
   }, []);

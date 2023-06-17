@@ -6,7 +6,6 @@ import { ReactComponent as SkipIcon } from "../../assets/icons/skip.svg";
 import { printerListAtom } from "../../store";
 
 import Printer from "../Printer";
-import AsideToggleButton from "../_Atoms/AsideTogglebutton";
 import TextButton from "../_Atoms/TextButton";
 import Result from "../Result";
 
