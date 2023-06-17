@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useRecoilValue } from "recoil";
 
 import { printerListAtom } from "../../store";
@@ -56,4 +56,4 @@ function Printer() {
   );
 }
 
-export default Printer;
+export default React.memo(Printer);
