@@ -1,0 +1,17 @@
+.toast {
+  opacity: 0;
+  position: fixed;
+  padding: 0 24px;
+  line-height: 40px;
+  box-sizing: border-box;
+  background-color: rgba($color: #fff, $alpha: 0.5);
+  color: #111;
+  font-weight: 700;
+  z-index: 999;
+  border-radius: 32px;
+  box-shadow: 0 0 24px rgba($color: #000, $alpha: 0.1);
+  transition: 0.2s;
+  &.on {
+    opacity: 1;
+  }
+}

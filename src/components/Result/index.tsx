@@ -1,12 +1,22 @@
-import { useRecoilValue } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 
-import { printerListAtom } from "../../store";
+import { ReactComponent as CopyIcon } from "../../assets/icons/copy.svg";
+
+import { printerListAtom, toastAtom } from "../../store";
 
 import ListItem from "../_Molecules/ListItem";
 import TextButton from "../_Atoms/TextButton";
 
 function Result({ closer }: { closer: () => void }) {
+  const setToast = useSetRecoilState(toastAtom);
+
   const printerList = useRecoilValue(printerListAtom);
+
+  const copyListToClipboard = (textList: string[]) => {
+    navigator.clipboard.writeText(textList.join(", ")).then(() => {
+      setToast({ text: "Copied to clipboard", state: true });
+    });
+  };
 
   return (
     <div className="result">
@@ -17,8 +27,14 @@ function Result({ closer }: { closer: () => void }) {
         ))}
       </div>
       <div className="result-btn">
+        <TextButton
+          icon={<CopyIcon fill="#fff" />}
+          text="Copy to Clipboard"
+          backgroundColor="#5499c7"
+          color="#f8f8f8"
+          onClick={() => copyListToClipboard(printerList)}
+        />
         <TextButton text="Close" onClick={closer} color="#5499c7" />
-        <TextButton text="Copy" backgroundColor="#5499c7" color="#f8f8f8" />
       </div>
     </div>
   );

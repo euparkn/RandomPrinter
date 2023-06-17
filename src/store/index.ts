@@ -36,3 +36,11 @@ export const showAsideAtom = atom<boolean>({
   key: "showAside",
   default: false,
 });
+
+export const toastAtom = atom({
+  key: "toast",
+  default: {
+    text: "",
+    state: false,
+  },
+});
