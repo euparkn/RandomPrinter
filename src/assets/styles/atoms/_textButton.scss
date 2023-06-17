@@ -1,9 +1,9 @@
 .text-button {
   @include TEXT;
+  @include FLEX_ALIGN_CENTER;
   height: 42px;
   padding: 0 20px;
   border-radius: 50px;
-  @include FLEX_ALIGN_CENTER;
   transition: 0.2s;
   &:disabled {
     opacity: 0.5;
