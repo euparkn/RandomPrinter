@@ -36,8 +36,11 @@
   width: 100%;
   margin-bottom: 8px;
   gap: 12px;
+  .text-input {
+    width: calc(100% - 128px);
+  }
   .circle-button {
-    min-width: 24px;
+    width: 24px;
     height: 24px;
   }
 }
