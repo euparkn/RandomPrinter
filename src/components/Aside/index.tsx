@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 
 import { ReactComponent as PrintAddIcon } from "../../assets/icons/print_add.svg";
 
@@ -7,12 +7,10 @@ import { ReactComponent as AddIcon } from "../../assets/icons/add.svg";
 
 import { IAsideListItem } from "../../types/listItemTypes";
 
-import { printerListAtom, showAsideAtom } from "../../store";
+import { showAsideAtom } from "../../store";
 
 import useAsideList from "../../hooks/useAsideList";
 import { useScrollWithList } from "../../hooks/useScrollWithList";
-
-import { setFormatList } from "../../utils/printerUtils";
 
 import TextButton from "../_Atoms/TextButton";
 import CircleButton from "../_Atoms/CircleButton";
@@ -22,9 +20,13 @@ import AsideListItem from "./AsideListItem";
 
 function Aside() {
   const showAside = useRecoilValue(showAsideAtom);
-  const setPrinterList = useSetRecoilState(printerListAtom);
-  const { asideList, createListItem, updateListItem, removeListItem } =
-    useAsideList();
+  const {
+    asideList,
+    createListItem,
+    updateListItem,
+    removeListItem,
+    addPrinter,
+  } = useAsideList();
 
   const listRef = useScrollWithList(asideList);
 
@@ -41,16 +43,10 @@ function Aside() {
     <div className={`aside ${showAside ? "" : "hide"}`}>
       <AsideHeader>
         {asideList.length < 20 && addButton}
-        {/* <CircleButton
-          onClick={() => setPrinterList(setFormatList(asideList))}
-          backgroundColor="#5499c7"
-        >
-          <PrintAddIcon fill="#fff" />
-        </CircleButton> */}
         <TextButton
           icon={<PrintAddIcon fill="#fff" />}
           text="Save"
-          onClick={() => setPrinterList(setFormatList(asideList))}
+          onClick={addPrinter}
           backgroundColor="#5499c7"
           color="#fff"
         />
