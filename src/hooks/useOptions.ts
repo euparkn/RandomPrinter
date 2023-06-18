@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil";
-import { IOptions } from "../types/AsideTypes";
+import { IOptions } from "../types/OptionsType";
 import { optionsAtom } from "../store";
 
 export const useOptions = () => {

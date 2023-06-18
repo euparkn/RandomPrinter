@@ -7,7 +7,6 @@ import { optionsAtom, printerListAtom } from "../../store";
 
 import { usePrinter } from "../../hooks/usePrinter";
 
-import TextButton from "../_Atoms/TextButton";
 import PrinterCounter from "./PrinterCounter";
 import PrinterInfoBox from "./PrinterInfoBox";
 import PrinterLight from "./PrinterLight";
@@ -26,7 +25,7 @@ function Printer() {
   const max = printerList.length;
 
   const { count, PaperStatus, isPrinting, print, reset } = usePrinter(
-    options.animation
+    options.animation ?? false
   );
 
   useEffect(() => {

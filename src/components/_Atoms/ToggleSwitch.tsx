@@ -11,7 +11,7 @@ function ToggleSwitch({ label, value = false, onChange }: IProps) {
       {label && <Text text={label} />}
       <input
         type="checkbox"
-        defaultChecked={value}
+        checked={value}
         onChange={(e) => {
           onChange(e.target.checked);
         }}
