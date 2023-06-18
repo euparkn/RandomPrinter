@@ -1,6 +1,7 @@
 {
   "name": "random-printer",
   "version": "0.1.0",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "node-sass": "^7.0.3",
@@ -33,7 +34,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "GENERATE_SOURCEMAP = false react-scripts build",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
