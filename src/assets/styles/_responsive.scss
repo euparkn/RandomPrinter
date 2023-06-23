@@ -9,6 +9,10 @@
   }
   .content {
     padding: $gap-short 0 $gap-short $gap-short;
+    .content-section > .text-button {
+      bottom: $gap-mobile;
+      left: $gap-mobile;
+    }
   }
 }
 
@@ -49,10 +53,6 @@
     .text-button {
       font-size: 18px;
     }
-  }
-  .content-section > .text-button {
-    bottom: 24px;
-    left: 16px;
   }
 }
 
@@ -111,9 +111,6 @@
     .aside-list-item {
       .text-input {
         height: 36px;
-        input {
-          padding: 16px;
-        }
       }
     }
   }

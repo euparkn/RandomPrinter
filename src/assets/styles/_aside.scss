@@ -33,9 +33,9 @@
 
 .aside-list-item {
   @include FLEX_ALIGN_CENTER;
+  justify-content: space-between;
   width: 100%;
   margin-bottom: 8px;
-  gap: 12px;
   .text-input {
     width: calc(100% - 128px);
   }

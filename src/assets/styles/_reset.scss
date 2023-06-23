@@ -79,6 +79,15 @@ textarea {
   outline: none;
 }
 
+input:focus-visible,
+input[type="checkbox"]:focus-visible + span,
+button:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  border: 2px solid #000;
+}
+
 input {
   border: 1px solid;
 }

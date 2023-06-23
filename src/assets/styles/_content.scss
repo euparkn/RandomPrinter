@@ -8,7 +8,7 @@
     @include FLEX_ALIGN_CENTER;
     justify-content: center;
     flex-direction: column;
-    gap: 64px;
+    gap: $gap;
     background-color: var(--content-bg);
     border-radius: 32px;
     overflow: hidden;
@@ -17,6 +17,6 @@
 
 .content-section > .text-button {
   position: absolute;
-  bottom: 64px;
-  left: 64px;
+  bottom: $gap;
+  left: $gap;
 }
