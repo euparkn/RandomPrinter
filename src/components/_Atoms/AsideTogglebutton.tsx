@@ -13,6 +13,7 @@ function AsideToggleButton() {
       className="aside-toggle-btn"
       type="button"
       onClick={() => setShowAside((prev) => !prev)}
+      aria-label={showAside ? "Hide aside" : "Show aside"}
     >
       {showAside ? (
         <CloseListIcon fill="#777" />

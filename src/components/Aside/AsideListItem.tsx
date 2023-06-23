@@ -20,6 +20,7 @@ function AsideListItem({
       <CircleButton
         onClick={() => removeListItem({ id })}
         backgroundColor="#e67e22"
+        label="Remove item from list"
       >
         <CloseIcon fill="#fff" />
       </CircleButton>

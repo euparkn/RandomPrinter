@@ -1,19 +1,19 @@
 import React from "react";
 
-function PrinterPaper({
-  text,
-  status,
-  animation,
-}: {
+interface IProps {
   text?: string;
   status?: boolean;
   animation?: boolean;
-}) {
+  ariaHidden?: boolean;
+}
+
+function PrinterPaper({ text, status, animation, ariaHidden }: IProps) {
   return (
     <div
       className={`printer-paper ${status ? "done" : ""} ${
         animation ? "animation" : ""
       }`}
+      aria-hidden={ariaHidden}
     >
       {text}
     </div>

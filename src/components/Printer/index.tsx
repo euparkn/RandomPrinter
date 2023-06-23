@@ -44,8 +44,9 @@ function Printer() {
         /> */}
         <CircleButton
           onClick={print}
-          disabled={count === max || isPrinting}
-          backgroundColor="#f8f8f8"
+          disabled={count === max}
+          backgroundColor={isPrinting ? "#aaa" : "#f8f8f8"}
+          label="Print"
         >
           <PrintIcon fill="#444" />
         </CircleButton>
@@ -55,8 +56,10 @@ function Printer() {
         </Info>
       </PrinterBlock>
       <PrinterBlock position="body-behind" />
-      {count !== max && <PrinterPaper text={printerList[count]} />}
-      {count > 1 && <PrinterPaper text={printerList[count - 2]} status />}
+      {count !== max && <PrinterPaper text={printerList[count]} ariaHidden />}
+      {count > 1 && (
+        <PrinterPaper text={printerList[count - 2]} status ariaHidden />
+      )}
       {max !== 0 && (
         <PrinterPaper
           text={printerList[count - 1]}

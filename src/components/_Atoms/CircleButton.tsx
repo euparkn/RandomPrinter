@@ -7,6 +7,7 @@ interface IProps {
   onClick?: () => void;
   children: ReactNode;
   backgroundColor?: string;
+  label: string;
 }
 
 function CircleButton({
@@ -14,6 +15,7 @@ function CircleButton({
   onClick = undefined,
   children = <AddIcon />,
   backgroundColor = "#fff",
+  label,
 }: IProps) {
   return (
     <button
@@ -22,6 +24,7 @@ function CircleButton({
       disabled={disabled}
       onClick={onClick}
       style={{ backgroundColor }}
+      aria-label={label}
     >
       {children}
     </button>

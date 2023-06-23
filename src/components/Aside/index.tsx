@@ -32,7 +32,11 @@ function Aside() {
 
   const addButton = useMemo(
     () => (
-      <CircleButton onClick={createListItem} backgroundColor="#fff">
+      <CircleButton
+        onClick={createListItem}
+        backgroundColor="#fff"
+        label="Add item to list"
+      >
         <AddIcon fill="#5499c7" />
       </CircleButton>
     ),

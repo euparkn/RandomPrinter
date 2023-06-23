@@ -17,6 +17,9 @@ export const usePrinter = (animation: boolean) => {
   };
 
   const print = () => {
+    if (isPrinting) {
+      return;
+    }
     setPaperStatus(false);
     setCount((prev) => prev + 1);
     printLoader();
