@@ -1,0 +1,9 @@
+.copyright {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  opacity: 0.3;
+  &:hover {
+    opacity: 0.5;
+  }
+}
