@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { ReactComponent as CloseIcon } from "../../assets/icons/close.svg";
 
@@ -15,6 +15,15 @@ function AsideListItem({
   updateListItem,
   removeListItem,
 }: IAsideListItemExtra) {
+  const [debouncedValue, setDebouncedValue] = useState<string>("");
+
+  useEffect(() => {
+    const debounce = setTimeout(() => {
+      updateListItem({ id, text: debouncedValue, count });
+    }, 200);
+    return () => clearTimeout(debounce);
+  }, [debouncedValue]);
+
   return (
     <div className="aside-list-item">
       <CircleButton
@@ -24,11 +33,7 @@ function AsideListItem({
       >
         <CloseIcon fill="#fff" />
       </CircleButton>
-      <TextInput
-        value={text}
-        onChange={(value) => updateListItem({ id, text: value, count })}
-        maxLength={20}
-      />
+      <TextInput value={text} onChange={setDebouncedValue} maxLength={20} />
       <Counter
         state={count}
         setState={(value) => updateListItem({ id, text, count: value })}
