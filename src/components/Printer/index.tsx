@@ -36,12 +36,6 @@ function Printer() {
     <div className="printer">
       <PrinterBlock position="box" />
       <PrinterBlock position="body">
-        {/* <TextButton
-          icon={<PrintIcon fill="#aaa" />}
-          text="Print"
-          onClick={print}
-          disabled={count === max || isPrinting}
-        /> */}
         <CircleButton
           onClick={print}
           disabled={count === max}

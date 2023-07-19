@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 interface IProps {
-  text?: string;
+  children?: string;
   onClick?: () => void;
   disabled?: boolean;
   icon?: ReactNode;
@@ -10,7 +10,7 @@ interface IProps {
 }
 
 function TextButton({
-  text,
+  children,
   onClick,
   disabled,
   icon,
@@ -26,7 +26,7 @@ function TextButton({
       style={{ backgroundColor, color }}
     >
       {icon}
-      {text}
+      {children}
     </button>
   );
 }

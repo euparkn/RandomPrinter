@@ -11,7 +11,7 @@ function Toast() {
     }
   }, [toast.state]);
 
-  return <div className={`toast ${toast.state ? "on" : ""}`}>{toast.text}</div>;
+  return <div className={`toast ${toast.state && "on"}`}>{toast.text}</div>;
 }
 
 export default Toast;

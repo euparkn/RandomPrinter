@@ -44,16 +44,17 @@ function Aside() {
   );
 
   return (
-    <div className={`aside ${showAside ? "" : "hide"}`}>
+    <div className={`aside ${!showAside && "hide"}`}>
       <AsideHeader>
         {asideList.length < 20 && addButton}
         <TextButton
           icon={<PrintAddIcon fill="#fff" />}
-          text="Save"
           onClick={addPrinter}
           backgroundColor="#5499c7"
           color="#fff"
-        />
+        >
+          Save
+        </TextButton>
       </AsideHeader>
       <div className="aside-list-content" ref={listRef}>
         {asideList.map((e: IAsideListItem) => (

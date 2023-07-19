@@ -10,8 +10,8 @@ interface IProps {
 function PrinterPaper({ text, status, animation, ariaHidden }: IProps) {
   return (
     <div
-      className={`printer-paper ${status ? "done" : ""} ${
-        animation ? "animation" : ""
+      className={`printer-paper ${status && "done"} ${
+        animation && "animation"
       }`}
       aria-hidden={ariaHidden}
     >

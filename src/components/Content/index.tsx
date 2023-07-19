@@ -19,12 +19,13 @@ function Content() {
         <Printer />
         {printerList.length !== 0 && (
           <TextButton
-            text="Results"
             onClick={() => setShowResult(true)}
             backgroundColor="transparent"
             color="#aaa"
             icon={<SkipIcon fill="#aaa" />}
-          />
+          >
+            Results
+          </TextButton>
         )}
         {showResult && <Result closer={() => setShowResult(false)} />}
       </div>

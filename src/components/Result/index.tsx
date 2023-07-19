@@ -29,12 +29,15 @@ function Result({ closer }: { closer: () => void }) {
       <div className="result-btn">
         <TextButton
           icon={<CopyIcon fill="#fff" />}
-          text="Copy to Clipboard"
           backgroundColor="#5499c7"
           color="#f8f8f8"
           onClick={() => copyListToClipboard(printerList)}
-        />
-        <TextButton text="Close" onClick={closer} color="#5499c7" />
+        >
+          Copy to Clipboard
+        </TextButton>
+        <TextButton onClick={closer} color="#5499c7">
+          Close
+        </TextButton>
       </div>
     </div>
   );
