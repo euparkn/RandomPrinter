@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 
 import { ReactComponent as PrintAddIcon } from "../../assets/icons/print_add.svg";
 
@@ -7,7 +7,7 @@ import { ReactComponent as AddIcon } from "../../assets/icons/add.svg";
 
 import { IAsideListItem } from "../../types/listItemTypes";
 
-import { showAsideAtom } from "../../store";
+import { asideListAtom, printerListAtom, showAsideAtom } from "../../store";
 
 import useAsideList from "../../hooks/useAsideList";
 import { useScrollWithList } from "../../hooks/useScrollWithList";
@@ -17,18 +17,21 @@ import CircleButton from "../_Atoms/CircleButton";
 import Options from "../_Molecules/Options";
 import AsideHeader from "./AsideHeader";
 import AsideListItem from "./AsideListItem";
+import { setFormatList } from "../../utils/printerUtils";
 
 function Aside() {
+  const [asideList, setAsideList] = useRecoilState(asideListAtom);
+  const setPrinterList = useSetRecoilState(printerListAtom);
   const showAside = useRecoilValue(showAsideAtom);
-  const {
-    asideList,
-    createListItem,
-    updateListItem,
-    removeListItem,
-    addPrinter,
-  } = useAsideList();
 
   const listRef = useScrollWithList(asideList);
+  const { createListItem, updateListItem, removeListItem } =
+    useAsideList(setAsideList);
+
+  const addPrinter = () => {
+    setPrinterList(setFormatList(asideList));
+    localStorage.setItem("random-printer-list", JSON.stringify(asideList));
+  };
 
   const addButton = useMemo(
     () => (

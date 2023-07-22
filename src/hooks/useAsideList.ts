@@ -1,16 +1,9 @@
 import { useCallback } from "react";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { SetterOrUpdater } from "recoil";
 
 import { IAsideListItem } from "../types/listItemTypes";
 
-import { setFormatList } from "../utils/printerUtils";
-
-import { asideListAtom, printerListAtom } from "../store";
-
-const useAsideList = () => {
-  const [asideList, setAsideList] = useRecoilState(asideListAtom);
-  const setPrinterList = useSetRecoilState(printerListAtom);
-
+const useAsideList = (setAsideList: SetterOrUpdater<IAsideListItem[]>) => {
   const createListItem = useCallback(() => {
     setAsideList((prev) => {
       const addedList = structuredClone(prev);
@@ -38,17 +31,10 @@ const useAsideList = () => {
     });
   }, []);
 
-  const addPrinter = () => {
-    setPrinterList(setFormatList(asideList));
-    localStorage.setItem("random-printer-list", JSON.stringify(asideList));
-  };
-
   return {
-    asideList,
     createListItem,
     updateListItem,
     removeListItem,
-    addPrinter,
   };
 };
 
