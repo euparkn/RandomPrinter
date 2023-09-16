@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { SetterOrUpdater } from "recoil";
 
-import { IAsideListItem } from "../types/listItemTypes";
+import { IAsideListItem } from "types/listItemTypes";
 
 const useAsideList = (setAsideList: SetterOrUpdater<IAsideListItem[]>) => {
   const createListItem = useCallback(() => {

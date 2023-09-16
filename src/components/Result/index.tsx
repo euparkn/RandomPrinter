@@ -1,11 +1,11 @@
 import { useRecoilValue, useSetRecoilState } from "recoil";
 
-import { ReactComponent as CopyIcon } from "../../assets/icons/copy.svg";
+import { ReactComponent as CopyIcon } from "assets/icons/copy.svg";
 
-import { printerListAtom, toastAtom } from "../../store";
+import { printerListAtom, toastAtom } from "store";
 
-import ListItem from "../_Molecules/ListItem";
-import TextButton from "../_Atoms/TextButton";
+import ListItem from "components/_Molecules/ListItem";
+import TextButton from "components/_Atoms/TextButton";
 
 function Result({ closer }: { closer: () => void }) {
   const setToast = useSetRecoilState(toastAtom);

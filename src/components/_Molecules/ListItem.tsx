@@ -1,4 +1,4 @@
-import ListStyleCircle from "../_Atoms/ListStyleCircle";
+import ListStyleCircle from "components/_Atoms/ListStyleCircle";
 
 function ListItem({ num, text }: { num: number; text: string }) {
   return (

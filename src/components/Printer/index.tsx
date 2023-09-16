@@ -1,18 +1,17 @@
 import React, { useEffect } from "react";
 import { useRecoilValue } from "recoil";
 
-import { ReactComponent as PrintIcon } from "../../assets/icons/print.svg";
+import { ReactComponent as PrintIcon } from "assets/icons/print.svg";
 
-import { optionsAtom, printerListAtom } from "../../store";
+import { optionsAtom, printerListAtom } from "store";
+import { usePrinter } from "hooks/usePrinter";
 
-import { usePrinter } from "../../hooks/usePrinter";
-
-import PrinterCounter from "./PrinterCounter";
-import PrinterInfoBox from "./PrinterInfoBox";
-import PrinterLight from "./PrinterLight";
-import PrinterPaper from "./PrinterPaper";
-import PrinterBlock from "./PrinterBlock";
-import CircleButton from "../_Atoms/CircleButton";
+import CircleButton from "components/_Atoms/CircleButton";
+import PrinterCounter from "components/Printer/PrinterCounter";
+import PrinterInfoBox from "components/Printer/PrinterInfoBox";
+import PrinterLight from "components/Printer/PrinterLight";
+import PrinterPaper from "components/Printer/PrinterPaper";
+import PrinterBlock from "components/Printer/PrinterBlock";
 
 const Info = Object.assign(PrinterInfoBox, {
   Counter: PrinterCounter,

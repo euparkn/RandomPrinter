@@ -1,6 +1,6 @@
 import { atom } from "recoil";
-import { IAsideListItem } from "../types/listItemTypes";
-import { IOptions } from "../types/OptionsType";
+import { IAsideListItem } from "types/listItemTypes";
+import { IOptions } from "types/OptionsType";
 
 const defaultAsideList = [
   {

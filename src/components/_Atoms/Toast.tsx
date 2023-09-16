@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { toastAtom } from "../../store";
+import { toastAtom } from "store";
 
 function Toast() {
   const [toast, setToast] = useRecoilState(toastAtom);

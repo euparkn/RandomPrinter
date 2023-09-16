@@ -1,8 +1,10 @@
 import { useMemo } from "react";
 import { useRecoilValue } from "recoil";
-import { optionsAtom } from "../store";
-import Main from "./Main";
-import Toast from "../components/_Atoms/Toast";
+import { optionsAtom } from "store";
+
+import Main from "pages/Main";
+
+import Toast from "components/_Atoms/Toast";
 
 function App() {
   const options = useRecoilValue(optionsAtom);

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-import { ReactComponent as CloseIcon } from "../../assets/icons/close.svg";
+import { ReactComponent as CloseIcon } from "assets/icons/close.svg";
 
-import { IAsideListItemExtra } from "../../types/listItemTypes";
+import { IAsideListItemExtra } from "types/listItemTypes";
 
-import CircleButton from "../_Atoms/CircleButton";
-import TextInput from "../_Atoms/TextInput";
-import Counter from "../_Molecules/Counter";
+import CircleButton from "components/_Atoms/CircleButton";
+import TextInput from "components/_Atoms/TextInput";
+import Counter from "components/_Molecules/Counter";
 
 function AsideListItem({
   id,

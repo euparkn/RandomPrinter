@@ -1,7 +1,7 @@
 import React from "react";
-import { useOptions } from "../../hooks/useOptions";
+import { useOptions } from "hooks/useOptions";
 
-import ToggleSwitch from "../_Atoms/ToggleSwitch";
+import ToggleSwitch from "components/_Atoms/ToggleSwitch";
 
 function Options() {
   const { options, updateOptions } = useOptions();

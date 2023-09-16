@@ -1,4 +1,4 @@
-import Text from "./Text";
+import Text from "components/_Atoms/Text";
 
 interface IProps {
   label?: string;

@@ -1,9 +1,9 @@
 import { useRecoilState } from "recoil";
 
-import { ReactComponent as ShowListIcon } from "../../assets/icons/list.svg";
-import { ReactComponent as CloseListIcon } from "../../assets/icons/close_list.svg";
+import { ReactComponent as ShowListIcon } from "assets/icons/list.svg";
+import { ReactComponent as CloseListIcon } from "assets/icons/close_list.svg";
 
-import { showAsideAtom } from "../../store";
+import { showAsideAtom } from "store";
 
 function AsideToggleButton() {
   const [showAside, setShowAside] = useRecoilState(showAsideAtom);

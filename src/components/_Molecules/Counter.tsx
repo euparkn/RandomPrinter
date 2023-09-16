@@ -1,8 +1,8 @@
-import CircleButton from "../_Atoms/CircleButton";
-import Text from "../_Atoms/Text";
+import CircleButton from "components/_Atoms/CircleButton";
+import Text from "components/_Atoms/Text";
 
-import { ReactComponent as AddIcon } from "../../assets/icons/add.svg";
-import { ReactComponent as RemoveIcon } from "../../assets/icons/remove.svg";
+import { ReactComponent as AddIcon } from "assets/icons/add.svg";
+import { ReactComponent as RemoveIcon } from "assets/icons/remove.svg";
 
 interface IProps {
   state: number;

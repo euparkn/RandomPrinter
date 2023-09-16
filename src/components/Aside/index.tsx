@@ -1,23 +1,21 @@
 import React, { useMemo } from "react";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 
-import { ReactComponent as PrintAddIcon } from "../../assets/icons/print_add.svg";
+import { ReactComponent as PrintAddIcon } from "assets/icons/print_add.svg";
+import { ReactComponent as AddIcon } from "assets/icons/add.svg";
 
-import { ReactComponent as AddIcon } from "../../assets/icons/add.svg";
+import { asideListAtom, printerListAtom, showAsideAtom } from "store";
+import { IAsideListItem } from "types/listItemTypes";
+import { setFormatList } from "utils/printerUtils";
 
-import { IAsideListItem } from "../../types/listItemTypes";
+import useAsideList from "hooks/useAsideList";
+import { useScrollWithList } from "hooks/useScrollWithList";
 
-import { asideListAtom, printerListAtom, showAsideAtom } from "../../store";
-
-import useAsideList from "../../hooks/useAsideList";
-import { useScrollWithList } from "../../hooks/useScrollWithList";
-
-import TextButton from "../_Atoms/TextButton";
-import CircleButton from "../_Atoms/CircleButton";
-import Options from "../_Molecules/Options";
-import AsideHeader from "./AsideHeader";
-import AsideListItem from "./AsideListItem";
-import { setFormatList } from "../../utils/printerUtils";
+import TextButton from "components/_Atoms/TextButton";
+import CircleButton from "components/_Atoms/CircleButton";
+import Options from "components/_Molecules/Options";
+import AsideHeader from "components/Aside/AsideHeader";
+import AsideListItem from "components/Aside/AsideListItem";
 
 function Aside() {
   const [asideList, setAsideList] = useRecoilState(asideListAtom);

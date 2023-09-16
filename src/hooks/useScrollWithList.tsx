@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { IAsideListItem } from "../types/listItemTypes";
+import { IAsideListItem } from "types/listItemTypes";
 
 export const useScrollWithList = (list: (IAsideListItem | unknown)[]) => {
   const listRef = useRef<HTMLDivElement>(null);

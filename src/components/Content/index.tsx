@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useRecoilValue } from "recoil";
 
-import { ReactComponent as SkipIcon } from "../../assets/icons/skip.svg";
+import { ReactComponent as SkipIcon } from "assets/icons/skip.svg";
 
-import { printerListAtom } from "../../store";
+import { printerListAtom } from "store";
 
-import Printer from "../Printer";
-import TextButton from "../_Atoms/TextButton";
-import Result from "../Result";
+import Printer from "components/Printer";
+import TextButton from "components/_Atoms/TextButton";
+import Result from "components/Result";
 
 function Content() {
   const printerList = useRecoilValue(printerListAtom);
